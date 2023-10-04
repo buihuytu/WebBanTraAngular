@@ -1,0 +1,60 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <p style="margin: 8px 0; color: rgb(185, 185, 185);">Bộ lọc sản phẩm</p>
+
+                <div class="category-product">
+                    <h4>Loại sản phẩm</h4>
+                    <form action="" class="form-cate-product">
+                        <!-- @foreach (var c in ViewBag.listCate)
+                        {
+                            <div style="margin-top:10px">
+                                <input type="checkbox" id="" name="" value="">
+                                <a href="@Url.Action("ProductsByCategory", "Home", new {slug = c.Slug, page = 1})" for="">@c.Name</a>
+                            </div>
+                        } -->
+                    </form>
+                </div>
+
+                <div class="product-search-price">
+                    <h4>Giá Thành</h4>
+                    <div id="slider-range" class="w-75" style="margin-top: 12px;"></div>
+                    <p>
+                        <input type="text" id="amount" readonly style="border:0; margin-top: 8px;">
+                    </p>
+
+
+                </div>
+
+                <div class="trademark">
+                    <h4>Thương Hiệu</h4>
+                    <form action="" class="form-cate-product">
+                        <div>
+                            <input type="checkbox" id="" name="" value="">
+                            <label for="">Trà Tân Cương Xanh</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="" name="" value="">
+                            <label for="">Trà Sen Tây Hồ</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="" name="" value="">
+                            <label for="">Trà Lộc Tân</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-9 col-sm-6" style="margin-top: 40px;">
+                <div class="product-empty text-center">
+                    <img src="../Assets/Pictures/san-pham/not-found.png" alt="" class="w-25">
+                    <img src="~/Public/Assets/Pictures/san-pham/not-found.png" alt="" class="w-25">
+                    <p style="font-size: 32px;">
+                        Danh mục chưa có sản phẩm!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,153 @@
+<section class="bg-detail">
+    <div class="container">
+        <!-- Nav Product -->
+        <div class="nav">
+            <ul>
+                <li>
+                    <a [routerLink]="['/']">Trang chủ</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <a [routerLink]="['/product']">Sản phẩm</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li><a [routerLink]="['/product']">Chi tiết sản phẩm</a></li>
+            </ul>
+        </div>
+
+        <!-- Product detail -->
+        <div class="product-detail">
+            <div class="row">
+                <div class="col-md-7 col-sm-12">
+                    <div class="slider-detail">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="slider-nav">
+                                    <!-- @foreach (var i in Model.tblProductImages)
+                                    {
+                                        <div>
+                                            <img src="~/Public/Admin/Pictures/product-images/@i.Name" alt="" class="w-75">
+                                        </div>
+                                    } -->
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="slider-for">
+                                    <!-- @foreach (var i in Model.tblProductImages)
+                                    {
+                                        <div>
+                                            <img src="~/Public/Admin/Pictures/product-images/@i.Name" alt="" class="w-100">
+                                        </div>
+                                    } -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <div class="detail-content">
+                        <h2>@Model.Name</h2>
+                        <div class="rating d-flex">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <p>71 đánh giá</p>
+                        </div>
+                        <div class="d-flex justify-content-start">
+                            <p class="detail-price">100.000<small>VND</small><span>/100gr</span></p>
+                        </div>
+                        <p class="safety-rating">
+                            Sản phẩm đạt chuẩn vệ sinh an toàn thực phẩm
+                        </p>
+                        <div class="detail-description">
+                            <p>
+                                Trà Shan Tuyết (Chè Shan Tuyết) hay còn gọi là trà tuyết.
+                                Đây là loại trà đặc sản của các đồng bào tộc người Tày, Giao,
+                                Mông và là đặc sản của các tỉnh như Hà Giang, Điện Biên, Lào Cai.
+                            </p>
+                            <p>
+                                Đặc điểm của trà Shan Tuyetes là búp trà (casnhh trà) rất to và
+                                màu trắng, dưới cánh trà phủ 1 lớp lông tơ mịn màu trắng.
+                            </p>
+                            <p>
+                                Cây trà Shan Tuyết cổ thụ rất lớn, có khi vài người lớn vòng tay ôm.
+                                Mọc ở trên núi cao hơn 1200m, quanh năm mây mù và lạnh. Sự chênh lệch
+                                nhiệt độ giữa ngày và đêm là rất lớn, chính bởi có điều kiện tự nhiên
+                                thú vị như vậy nên đó là nét độc đáo tạo ra một hương vị trà shan
+                                tuyết cổ thụ thơm ngon.
+                            </p>
+                            <!-- @Html.Raw(Model.Description) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Instructions -->
+        <div class="instruction">
+            <div class="row">
+                <div class="col-md-5 col-sm-6">
+                    <h2 class="h2-detail">Hướng dẫn pha <br /> @Model.Name</h2>
+                    <div class="instruction-item d-flex">
+                        <i class="fa-solid fa-droplet fa-flip-horizontal"></i>
+                        <p>
+                            Đổ vào ấm 150 - 200ml, <br>
+                            nước sôi nhiệt độ 85°C
+                        </p>
+                    </div>
+                    <div class="instruction-item d-flex">
+                        <i class="fa-solid fa-spoon"></i>
+                        <p>
+                            1 - 2 nắm trà, khoảng 20 - 30 gram
+                        </p>
+                    </div>
+                    <div class="instruction-item d-flex">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>
+                            Để trà 4 - 6 phút
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-6">
+                    <img src="~/Public/Assets/Pictures/chitietsanpham/phatra.jpg" alt="" class="w-100">
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Product -->
+        
+        <div class="related-product">
+            <h2 class="h2-detail">Sản phẩm liên quan</h2>
+            <div class="related-slider">
+                <!-- @{Random rnd = new Random();}
+                @foreach (var p in ViewBag.listOther)
+                {
+                    int star = (rnd.Next(100));
+                    <div class="product-item">
+                        <div class="product-rate d-flex">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+
+                            <p>(@star)</p>
+                        </div>
+                        <div class="new-product">
+                            <p>NEW</p>
+                        </div>
+                        <img src="~/Public/Admin/Pictures/products/@p.Image" alt="" class="w-100">
+                        <h5><a href="@Url.Action("ProductDetail", "Home", new {@p.Slug})">@p.Name</a></h5>
+                        <div class="d-flex justify-content-center">
+                            <p class="product-price">@String.Format("{0:0,0}", p.Price)<small>VND</small><span>/100gr</span></p>
+                        </div>
+                    </div>
+                } -->
+                
+            </div>
+        </div>
+    </div>
+</section>

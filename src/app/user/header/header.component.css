@@ -1,0 +1,19 @@
+
+.header {
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 999;
+}
+
+.header-nav ul li{
+    margin: 12px 36px 0 36px;
+}
+
+.header-nav ul li a{
+    font-family: 'svn-0';
+    font-size: 18px;
+}

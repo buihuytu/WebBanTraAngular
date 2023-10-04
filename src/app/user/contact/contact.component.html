@@ -1,0 +1,41 @@
+<div class="body w-100">
+    <div class="container">
+        <div class="form">
+            <form class="" method="POST" [formGroup]="sendMessage" (ngSubmit)="onSend()">
+                <div class="title">
+                    <p>Liên hệ với chúng tôi</p>
+                </div>
+                <div class="input">
+                    <input type="text" class="form-control" id="fullName" placeholder="Họ tên" formControlName="fullName">
+                    <div *ngIf="submited && f.fullName.errors">
+                        <small *ngIf="f.fullName.errors['required']">Vui lòng nhập tên</small>
+                    </div>
+                </div>
+                <div class="input">
+                    <input type="text" class="form-control" id="email" placeholder="Email" formControlName="email" required>
+                    <div *ngIf="submited && f.email.errors">
+                        <small *ngIf="f.email.errors['required']">Vui lòng nhập địa chỉ Email</small>
+                    </div>
+                </div>
+                <div class="input">
+                    <input type="text" class="form-control" id="phoneNumber" placeholder="Số điện thoại"  formControlName="phoneNumber" required>
+                    <div *ngIf="submited && f.phoneNumber.errors">
+                        <small *ngIf="f.phoneNumber.errors['required']">Vui lòng nhập số điện thoại</small>
+                    </div>
+                </div>
+                <div class="input">
+                    <!-- <input type="text" class="form-control" id="content" placeholder="Nội dung" name="detail" required> -->
+                    <textarea class="form-control" id="message" rows="1" placeholder="Nội dung" formControlName="message"></textarea>
+                    <div *ngIf="submited && f.message.errors">
+                        <small *ngIf="f.message.errors['required']">Vui lòng nhập nội dung</small>
+                    </div>
+                </div>
+
+                <div class="btn-submit">
+                    <button class="t-btn" type="submit" id="sendContact">Gửi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

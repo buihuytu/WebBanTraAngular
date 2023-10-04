@@ -1,0 +1,108 @@
+<div class="app-admin-dashboard-container">
+    <input type="checkbox" id="sidebar-toggle">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h4 class="brand">
+                <span class="ti-unlink"></span>
+                <span>DashBoard</span>
+            </h4>
+            <label for="sidebar-toggle" class="ti-menu-alt"></label>
+        </div>
+
+        <div class="sidebar-menu">
+            <ul id="myUL">
+                <li>
+                    <a href="../DashBoard/index.html">
+                        <span class="ti-home"></span>
+                        <span>Trang chủ</span>
+                    </a>
+                </li>
+                <li>
+                    <span class="ti-bag"></span>
+                    <span class="caret">Loại sản phẩm</span>
+                    <ul class="nested">
+                        <li><a href=""><span>Danh sách</span></a></li>
+                        <li><a href=""><span>Thêm mới</span></a></li>
+                        <li><a href=""><span>Thùng rác</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="ti-crown"></span>
+                    <span class="caret">Sản phẩm</span>
+                    <ul class="nested">
+                        <li><a href=""><span>Danh sách</span></a></li>
+                        <li><a href=""><span>Thêm mới</span></a></li>
+                        <li><a href=""><span>Thùng rác</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="ti-book"></span>
+                    <span class="caret">Bài viết</span>
+                    <ul class="nested">
+                        <li><a href=""><span>Danh sách</span></a></li>
+                        <li><a href=""><span>Thêm mới</span></a></li>
+                        <li><a href=""><span>Thùng rác</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="ti-book"></span>
+                    <span class="caret">Slider</span>
+                    <ul class="nested">
+                        <li><a href=""><span>Danh sách</span></a></li>
+                        <li><a href=""><span>Thêm mới</span></a></li>
+                        <li><a href=""><span>Thùng rác</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="ti-comment-alt"></span>
+                    <span class="caret">Liên hệ</span>
+                    <ul class="nested">
+                        <li><a href=""><span>Danh sách</span></a></li>
+                        <li><a href=""><span>Thùng rác</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="ti-user"></span>
+                    <span class="caret">Thành viên</span>
+                    <ul class="nested">
+                        <li><a href=""><span>Danh sách</span></a></li>
+                        <li><a href=""><span>Thêm mới</span></a></li>
+                        <li><a href=""><span>Thùng rác</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="main-content">
+
+        <header>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="true">
+                        <img src="" class="img-circle elevation-1" alt="Image" width="35" height="35px" style="margin-top:-5px; border-radius: 50%;">
+                        <span>@Session["Admin_Name"]</span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="min-width: 200px; font-size: 15px; left: inherit; right: 0px;">
+                        <span class="dropdown-item dropdown-header font-weight-bold text-drank d-block">Quản trị viên</span>
+                        <div class="dropdown-divider"></div>
+
+                        <div class="dropdown-divider"></div>
+                        <a href="/Admin/Logout" class="dropdown-item dropdown-footer text-left">
+                            <i class="fas fa-sign-out-alt mr-2"></i>Đăng xuất
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </header>
+
+        <main>
+
+
+        </main>
+
+    </div>
+</div>
+    

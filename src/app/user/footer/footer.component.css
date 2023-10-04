@@ -1,0 +1,24 @@
+
+
+/* footer */
+footer {
+    background-image: url(../../../assets/Pictures/trang-chu/fotter.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 20px 0;
+}
+
+footer h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+footer ul li {
+    margin-top: 4px;
+}
+
+footer ul li a i {
+    font-size: 20px;
+    margin-right: 8px;
+}
