@@ -12,8 +12,20 @@ import { ContactComponent } from './user/contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HomeComponent } from './user/home/home.component';
+<<<<<<< HEAD
 import { NewsComponent } from './user/news/news.component';
 import { PostComponent } from './user/post/post.component';
+=======
+import { MenuComponent } from './admin/menu/menu.component';
+import { DataTablesModule } from 'angular-datatables';
+import { DashboardComponent } from './admin/dashboard/dasboard.component';
+import { ListCateComponent } from './admin/category/list-cate/list-cate.component';
+import { TrashCateComponent } from './admin/category/trash-cate/trash-cate.component';
+import { ListUserComponent } from './admin/users/list-user/list-user.component';
+import { TrashUserComponent } from './admin/users/trash-user/trash-user.component';
+import { ListContactComponent } from './admin/contact/list-contact/list-contact.component';
+import { TrashContactComponent } from './admin/contact/trash-contact/trash-contact.component';
+>>>>>>> a08f30c150b2911922a89b2dfbfd2a58064959f0
 
 @NgModule({
   declarations: [
@@ -24,8 +36,22 @@ import { PostComponent } from './user/post/post.component';
     ProductComponent,
     ProductDetailComponent,
     ContactComponent,
+<<<<<<< HEAD
     NewsComponent,
     PostComponent,
+=======
+
+    MenuComponent,
+    DashboardComponent,
+    ListCateComponent,
+    TrashCateComponent,
+
+    ListUserComponent,
+    TrashUserComponent,
+
+    ListContactComponent,
+    TrashContactComponent
+>>>>>>> a08f30c150b2911922a89b2dfbfd2a58064959f0
   ],
   imports: [
     BrowserModule,
@@ -34,6 +60,7 @@ import { PostComponent } from './user/post/post.component';
     ReactiveFormsModule,
     HttpClientModule,
     SlickCarouselModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

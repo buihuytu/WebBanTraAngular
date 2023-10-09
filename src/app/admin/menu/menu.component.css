@@ -1,0 +1,123 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+#sidebar-toggle {
+    display: none;
+}
+
+.sidebar {
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background: #027581;
+    color: #fff;
+    overflow-y: auto;
+    transition: width 500ms;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0rem 1rem;
+}
+
+.sidebar-menu {
+    padding: 1rem;
+}
+
+.sidebar li {
+    margin: 1.2rem 0;
+}
+
+.sidebar a {
+    color: #fff;
+}
+
+.sidebar a span:last-child {
+    padding-left: .6rem;
+}
+
+#sidebar-toggle:checked ~ .sidebar {
+    width: 60px;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header h4 span,
+#sidebar-toggle:checked ~ .sidebar li span:last-child {
+    display: none;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header,
+#sidebar-toggle:checked ~ .sidebar li {
+    display: flex;
+    justify-content: center;
+}
+
+#sidebar-toggle:checked ~ .main-content {
+    margin-left: 60px;
+}
+
+#sidebar-toggle:checked ~ .main-content header {
+    left: 60px;
+    width: calc(100% - 60px);
+}
+
+
+/* has-treeview */
+/* Remove default bullets */
+ul, #myUL {
+    list-style-type: none;
+  }
+  
+/* Remove margins and padding from the parent ul */
+#myUL {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the caret/arrow */
+.caret {
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+    margin-left: 10px;
+}
+
+/* Create the caret/arrow with a unicode, and style it */
+.caret::after {
+    content: "\25B6";
+    color: #fff;
+    display: inline-block;
+    margin-left: .6rem;
+}
+
+/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+.caret-down::after {
+    transform: rotate(90deg);
+}
+
+/* Hide the nested list */
+.nested {
+    display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+    display: block;
+}
+
+.nested li a span::before {
+    content: "\25B6";
+    color: #fff;
+    display: inline-block;
+    margin: 0 .6rem;
+}
