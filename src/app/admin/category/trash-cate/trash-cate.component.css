@@ -147,30 +147,6 @@ main {
     margin: 1rem;
 }
 
-.activity-card table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.activity-card thead {
-    background: #efefef;
-    text-align: left;
-}
-
-th, td {
-    font-size: .9rem;
-    padding: 1rem 1rem;
-    color: #1D2231;
-}
-
-td {
-    font-size: .8rem;
-}
-
-tbody tr:nth-child(even) {
-    background: #f9fafc;
-}
-
 .badge {
     padding: .2rem 1rem;
     border-radius: 20px;
@@ -204,18 +180,6 @@ tbody tr:nth-child(even) {
     background-size: cover;
     background-repeat: no-repeat;
 }
-
-/* .img-1 {
-    background-image: url(../Assets/img/1.jpg);
-}
-
-.img-2 {
-    background-image: url(../Assets/img/2.jpg);
-}
-
-.img-3 {
-    background-image: url(../Assets/img/3.jpeg);
-} */
 
 .summary-card {
     margin-bottom: 1.5rem;
@@ -468,21 +432,6 @@ tbody tr:nth-child(even) {
     border-radius: 50%;
   }
 
-/* Table */
-.sorting::before {
-    float: right;
-    content: "\2191";
-}
-
-.sorting::after {
-    float: right;
-    content: "\2193";
-}
-
-td {
-    font-size: 16px;
-}
-
 /* Product img */
 .img-product {
     width: 60px;
@@ -491,15 +440,4 @@ td {
 
 .user-active {
     color: green;
-}
-
-
-/* Data Table */
-#myTable_wrapper {
-    width: 100%;
-}
-
-.paginate_button {
-    padding: 4px 12px !important;
-    font-size: 14px;
 }

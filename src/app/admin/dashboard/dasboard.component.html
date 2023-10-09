@@ -1,108 +1,206 @@
-<div class="app-admin-dashboard-container">
-    <input type="checkbox" id="sidebar-toggle">
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <h4 class="brand">
-                <span class="ti-unlink"></span>
-                <span>DashBoard</span>
-            </h4>
-            <label for="sidebar-toggle" class="ti-menu-alt"></label>
-        </div>
+<div class="main-content">
 
-        <div class="sidebar-menu">
-            <ul id="myUL">
-                <li>
-                    <a href="../DashBoard/index.html">
-                        <span class="ti-home"></span>
-                        <span>Trang chủ</span>
+    <header>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" aria-expanded="true">
+                    <img src="" class="img-circle elevation-1" alt="Image" width="35" height="35px"
+                        style="margin-top:-5px; border-radius: 50%;">
+                    <span>@Session["Admin_Name"]</span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right"
+                    style="min-width: 200px; font-size: 15px; left: inherit; right: 0px;">
+                    <span class="dropdown-item dropdown-header font-weight-bold text-drank d-block">Quản trị viên</span>
+                    <div class="dropdown-divider"></div>
+
+                    <div class="dropdown-divider"></div>
+                    <a href="/Admin/Logout" class="dropdown-item dropdown-footer text-left">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Đăng xuất
                     </a>
-                </li>
-                <li>
-                    <span class="ti-bag"></span>
-                    <span class="caret">Loại sản phẩm</span>
-                    <ul class="nested">
-                        <li><a href=""><span>Danh sách</span></a></li>
-                        <li><a href=""><span>Thêm mới</span></a></li>
-                        <li><a href=""><span>Thùng rác</span></a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span class="ti-crown"></span>
-                    <span class="caret">Sản phẩm</span>
-                    <ul class="nested">
-                        <li><a href=""><span>Danh sách</span></a></li>
-                        <li><a href=""><span>Thêm mới</span></a></li>
-                        <li><a href=""><span>Thùng rác</span></a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span class="ti-book"></span>
-                    <span class="caret">Bài viết</span>
-                    <ul class="nested">
-                        <li><a href=""><span>Danh sách</span></a></li>
-                        <li><a href=""><span>Thêm mới</span></a></li>
-                        <li><a href=""><span>Thùng rác</span></a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span class="ti-book"></span>
-                    <span class="caret">Slider</span>
-                    <ul class="nested">
-                        <li><a href=""><span>Danh sách</span></a></li>
-                        <li><a href=""><span>Thêm mới</span></a></li>
-                        <li><a href=""><span>Thùng rác</span></a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span class="ti-comment-alt"></span>
-                    <span class="caret">Liên hệ</span>
-                    <ul class="nested">
-                        <li><a href=""><span>Danh sách</span></a></li>
-                        <li><a href=""><span>Thùng rác</span></a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span class="ti-user"></span>
-                    <span class="caret">Thành viên</span>
-                    <ul class="nested">
-                        <li><a href=""><span>Danh sách</span></a></li>
-                        <li><a href=""><span>Thêm mới</span></a></li>
-                        <li><a href=""><span>Thùng rác</span></a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
+                </div>
+            </li>
+        </ul>
+    </header>
 
+    <main>
 
-    <div class="main-content">
+        <h2 class="dash-title">Overview</h2>
 
-        <header>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="true">
-                        <img src="" class="img-circle elevation-1" alt="Image" width="35" height="35px" style="margin-top:-5px; border-radius: 50%;">
-                        <span>@Session["Admin_Name"]</span>
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="min-width: 200px; font-size: 15px; left: inherit; right: 0px;">
-                        <span class="dropdown-item dropdown-header font-weight-bold text-drank d-block">Quản trị viên</span>
-                        <div class="dropdown-divider"></div>
-
-                        <div class="dropdown-divider"></div>
-                        <a href="/Admin/Logout" class="dropdown-item dropdown-footer text-left">
-                            <i class="fas fa-sign-out-alt mr-2"></i>Đăng xuất
-                        </a>
+        <div class="dash-cards">
+            <div class="card-single">
+                <div class="card-body">
+                    <span class="ti-briefcase"></span>
+                    <div>
+                        <h5>Account Balance</h5>
+                        <h4>$30,659.45</h4>
                     </div>
-                </li>
-            </ul>
-        </header>
+                </div>
+                <div class="card-footer">
+                    <a href="">View all</a>
+                </div>
+            </div>
 
-        <main>
+            <div class="card-single">
+                <div class="card-body">
+                    <span class="ti-reload"></span>
+                    <div>
+                        <h5>Pending</h5>
+                        <h4>$19,500.45</h4>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="">View all</a>
+                </div>
+            </div>
+
+            <div class="card-single">
+                <div class="card-body">
+                    <span class="ti-check-box"></span>
+                    <div>
+                        <h5>Processed</h5>
+                        <h4>$20,659</h4>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="">View all</a>
+                </div>
+            </div>
+        </div>
 
 
-        </main>
+        <section class="recent">
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <h3>Recent activity</h3>
 
-    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Project</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Team</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>App Development</td>
+                                    <td>15 Aug, 2020</td>
+                                    <td>22 Aug, 2020</td>
+                                    <td class="td-team">
+                                        <div class="img-1"></div>
+                                        <div class="img-2"></div>
+                                        <div class="img-3"></div>
+                                    </td>
+                                    <td>
+                                        <span class="badge success">Success</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Logo Design</td>
+                                    <td>15 Aug, 2020</td>
+                                    <td>22 Aug, 2020</td>
+                                    <td class="td-team">
+                                        <div class="img-1"></div>
+                                        <div class="img-2"></div>
+                                        <div class="img-3"></div>
+                                    </td>
+                                    <td>
+                                        <span class="badge warning">Processing</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Server setup</td>
+                                    <td>15 Aug, 2020</td>
+                                    <td>22 Aug, 2020</td>
+                                    <td class="td-team">
+                                        <div class="img-1"></div>
+                                        <div class="img-2"></div>
+                                        <div class="img-3"></div>
+                                    </td>
+                                    <td>
+                                        <span class="badge success">Success</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Front-end Design</td>
+                                    <td>15 Aug, 2020</td>
+                                    <td>22 Aug, 2020</td>
+                                    <td class="td-team">
+                                        <div class="img-1"></div>
+                                        <div class="img-2"></div>
+                                        <div class="img-3"></div>
+                                    </td>
+                                    <td>
+                                        <span class="badge warning">Processing</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Web Development</td>
+                                    <td>15 Aug, 2020</td>
+                                    <td>22 Aug, 2020</td>
+                                    <td class="td-team">
+                                        <div class="img-1"></div>
+                                        <div class="img-2"></div>
+                                        <div class="img-3"></div>
+                                    </td>
+                                    <td>
+                                        <span class="badge success">Success</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="summary">
+                    <div class="summary-card">
+                        <div class="summary-single">
+                            <span class="ti-id-badge"></span>
+                            <div>
+                                <h5>196</h5>
+                                <small>Number of staff</small>
+                            </div>
+                        </div>
+                        <div class="summary-single">
+                            <span class="ti-calendar"></span>
+                            <div>
+                                <h5>16</h5>
+                                <small>Number of leave</small>
+                            </div>
+                        </div>
+                        <div class="summary-single">
+                            <span class="ti-face-smile"></span>
+                            <div>
+                                <h5>12</h5>
+                                <small>Profile update request</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bday-card">
+                        <div class="bday-flex">
+                            <div class="bday-img"></div>
+                            <div class="bday-info">
+                                <h5>Dwayne F. Sanders</h5>
+                                <small>Birthday Today</small>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button>
+                                <span class="ti-gift"></span>
+                                Wish him
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
 </div>
-    
