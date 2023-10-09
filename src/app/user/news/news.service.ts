@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
-export class ContactService {
+export class NewsService {
 
   constructor(private http: HttpClient) { }
 
-  add(data: any): Observable<any> {
-    return this.http.post<any>('https://localhost:7015/api/Contacts', data);
+  getAll(): Observable<any> {
+    return this.http.get<any>('https://localhost:7015/api/News');
   }
 
 

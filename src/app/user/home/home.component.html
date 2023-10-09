@@ -1,43 +1,32 @@
 <!-- Banner -->
 <section>
-    
     <div class="banner-slider">
-        <div class="banner-item">
-            <img src="../assets/Pictures/trang-chu/backBanner.png" alt="" class="w-100">
-            <div class="banner-content">
-                <h5>TRÀ ƯỚP SEN TÂY HỒ</h5>
-                <img src="../assets/Pictures/trang-chu/tinhhoaamthuc.png" alt="" class="w-75">
-                <p>
-                    Sự hòa quyện tuyệt vời giữa hương thơm ngan ngát của<br/>
-                    sen Bách diệp Hồ Tây và vị đậm đà của trà Tân Cương
-                </p>
-                <button class="btn-green">THỬ NGAY</button>
+            
+        
+    </div>
+    <div class="banner-slider">
+        <ngx-slick-carousel class="carousel" 
+            #slickModal="slick-carousel" 
+            [config]="slideConfig" 
+            (init)="slickInit($event)"
+            (breakpoint)="breakpoint($event)"
+            (afterChange)="afterChange($event)"
+            (beforeChange)="beforeChange($event)">
+            
+
+            <div class="banner-item" ngxSlickItem *ngFor="let slide of slidesSlider" >
+                <img src="{{'../assets/sliders/' +slide.image }}" alt="" class="w-100">
+                <div class="banner-content">
+                    <h5>{{slide.name}}</h5>
+                    <img src="../assets/Pictures/trang-chu/tinhhoaamthuc.png" alt="" class="w-75">
+                    <p style="width: 400px">
+                        {{slide.description}}
+                    </p>
+                    <a class="btn-green mt-3 btn-buynow">THỬ NGAY</a>
+                </div>
             </div>
-        </div>
-        <div class="banner-item">
-            <img src="../assets/Pictures/trang-chu/backBanner.png" alt="" class="w-100">
-            <div class="banner-content">
-                <h5>TRÀ ƯỚP SEN TÂY HỒ</h5>
-                <img src="../assets/Pictures/trang-chu/tinhhoaamthuc.png" alt="" class="w-75">
-                <p>
-                    Sự hòa quyện tuyệt vời giữa hương thơm ngan ngát của<br/>
-                    sen Bách diệp Hồ Tây và vị đậm đà của trà Tân Cương
-                </p>
-                <button class="btn-green">THỬ NGAY</button>
-            </div>
-        </div>
-        <div class="banner-item">
-            <img src="../assets/Pictures/trang-chu/backBanner.png" alt="" class="w-100">
-            <div class="banner-content">
-                <h5>TRÀ ƯỚP SEN TÂY HỒ</h5>
-                <img src="../assets/Pictures/trang-chu/tinhhoaamthuc.png" alt="" class="w-75">
-                <p>
-                    Sự hòa quyện tuyệt vời giữa hương thơm ngan ngát của<br/>
-                    sen Bách diệp Hồ Tây và vị đậm đà của trà Tân Cương
-                </p>
-                <button class="btn-green">THỬ NGAY</button>
-            </div>
-        </div>
+        </ngx-slick-carousel>
+                
     </div>
   </section>
   
@@ -49,18 +38,18 @@
         <div class="outstanding-product">
             <h2>SẢN PHẨM NỔI BẬT</h2>
             <ngx-slick-carousel class="carousel" 
-                        #slickModal="slick-carousel" 
-                        [config]="slideConfig" 
-                        (init)="slickInit($event)"
-                        (breakpoint)="breakpoint($event)"
-                        (afterChange)="afterChange($event)"
-                        (beforeChange)="beforeChange($event)">
-                    <div class="product-slider" style="background-color: white !important;" ngxSlickItem *ngFor="let slide of slidesHotProducts" class="slide">
-                        <div class="product-item" >
-                            <img src="{{ slide.img }}" alt="" width="100%">
-                            <h6 class="text-center mt-3"><a href="#">TRÀ ƯỚP BÔNG SEN</a></h6>
-                        </div>
+                #slickModal="slick-carousel" 
+                [config]="slideConfig" 
+                (init)="slickInit($event)"
+                (breakpoint)="breakpoint($event)"
+                (afterChange)="afterChange($event)"
+                (beforeChange)="beforeChange($event)">
+                <div class="product-slider" style="background-color: white !important; border: none;" ngxSlickItem *ngFor="let slide of slidesHotProducts" class="slide">
+                    <div class="product-item" >
+                        <img src="{{ slide.img }}" alt="" width="100%">
+                        <h6 class="text-center mt-3"><a href="#">TRÀ ƯỚP BÔNG SEN</a></h6>
                     </div>
+                </div>
             </ngx-slick-carousel>
             <div >
                 <!-- 

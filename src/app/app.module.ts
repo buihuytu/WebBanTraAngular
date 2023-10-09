@@ -12,6 +12,8 @@ import { ContactComponent } from './user/contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HomeComponent } from './user/home/home.component';
+import { NewsComponent } from './user/news/news.component';
+import { PostComponent } from './user/post/post.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { HomeComponent } from './user/home/home.component';
     ProductComponent,
     ProductDetailComponent,
     ContactComponent,
+    NewsComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,

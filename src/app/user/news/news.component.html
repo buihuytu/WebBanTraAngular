@@ -2,18 +2,15 @@
     <div class="container">
         <h2>TIN TỨC</h2>
         <div class="row">
-            <!-- @foreach (var n in Model)
-            {
-                <div class="col-md-4 col-sm-6">
-                    <div class="news-item">
-                        <img src="~/Public/Admin/Pictures/news/@n.Image" alt="" class="w-100">
-                        <h5><a href="@Url.Action("Posts", "Home", new {n.Slug})">@n.Name</a></h5>
-                        <p>
-                            @n.Summary
-                        </p>
-                    </div>
+            <div class="col-md-4 col-sm-6" *ngFor="let news of listNews;">
+                <div class="news-item">
+                    <img src="{{'../assets/news/' + news.image}}" alt="" class="w-100">
+                    <h5><a routerLink="/post/{{news.slug}}">{{news.name}}</a></h5>
+                    <p>
+                        {{news.summary}}
+                    </p>
                 </div>
-            } -->
+            </div>
 
         </div>
         <div class="pagination">

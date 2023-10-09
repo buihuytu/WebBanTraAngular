@@ -7,12 +7,14 @@ import { NewsComponent } from './user/news/news.component';
 import { ProductComponent } from './user/product/product.component';
 import { ProductDetailComponent } from './user/product-detail/product-detail.component';
 import { ProductNotFoundComponent } from './user/product-not-found/product-not-found.component';
+import { PostComponent } from './user/post/post.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
   {path:'about', component: AboutComponent},
   {path:'contact', component: ContactComponent},
   {path:'news', component: NewsComponent},
+  {path:'post/:slug', component: PostComponent},
   {path:'product', component: ProductComponent},
   {path:'product-detail', component: ProductDetailComponent},
   {path:'product-not-found', component: ProductNotFoundComponent },

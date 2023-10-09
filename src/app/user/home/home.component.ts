@@ -1,18 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-user-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-  slidesSlider = [
-    { img: '../assets/Pictures/trang-chu/backBanner.png' },
-    { img: '../assets/Pictures/trang-chu/backBanner.png' },
-    { img: '../assets/Pictures/trang-chu/backBanner.png' },
-    { img: '../assets/Pictures/trang-chu/backBanner.png' },
-    { img: '../assets/Pictures/trang-chu/backBanner.png' },
-  ];
+export class HomeComponent implements OnInit{
+  slidesSlider: any[] = [];
   slidesHotProducts = [
     { img: '../assets/Pictures/trang-chu/product-1.png' },
     { img: '../assets/Pictures/trang-chu/product-2.png' },
@@ -20,6 +15,7 @@ export class HomeComponent {
     { img: '../assets/Pictures/trang-chu/product-4.png' },
     { img: '../assets/Pictures/trang-chu/product-4.png' },
   ];
+
   slideConfig = { slidesToShow: 4, slidesToScroll: 4 };
   slickInit(e: any) {
     console.log('slick initialized');
@@ -32,5 +28,17 @@ export class HomeComponent {
   }
   beforeChange(e: any) {
     console.log('beforeChange');
+  }
+
+  constructor(private ps: HomeService){}
+
+  getAll(){
+    this.ps.getListSlider().subscribe(res => {
+      res.list.filter((x: any) => this.slidesSlider.push(x));
+    });
+  }
+
+  ngOnInit(){
+    this.getAll();
   }
 }

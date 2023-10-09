@@ -6,13 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
-export class ContactService {
+export class HomeService {
 
   constructor(private http: HttpClient) { }
 
-  add(data: any): Observable<any> {
-    return this.http.post<any>('https://localhost:7015/api/Contacts', data);
+  // các phương thức khác
+  getListSlider(): Observable<any> {
+    return this.http.get<any>('https://localhost:7015/api/Sliders')
   }
 
-
+  
 }

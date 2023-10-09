@@ -1,0 +1,46 @@
+
+<section class="posts">
+    <div class="container">
+        <!-- Nav Post -->
+        <div class="nav">
+            <ul>
+                <li>
+                    <a [routerLink]="['/']">Trang chủ</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <a [routerLink]="['/news']">Tin tức</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>{{name}}</li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="col-md-7 col-sm-12">
+                <div class="posts-left">
+                    <h3>{{name}}</h3>
+                    <div class="content" style="width:100%" >
+                        <div innerHTML="{{detail}}"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="posts-right">
+                    <h3>Bài viết mới</h3>
+                    <div class="new-posts d-flex justify-content-between" *ngFor="let post of listOtherPost;" >
+                        <img src="{{'../assets/news/' + post.image}}" alt="" style="width:200px">
+                        <h6>
+                            <a href="/post/{{post.slug}}">
+                                {{post.name}}
+                            </a>
+                        </h6>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
