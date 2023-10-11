@@ -11,6 +11,8 @@ import { ListUserComponent } from './users/list-user/list-user.component';
 import { TrashUserComponent } from './users/trash-user/trash-user.component';
 import { ListContactComponent } from './contact/list-contact/list-contact.component';
 import { TrashContactComponent } from './contact/trash-contact/trash-contact.component';
+import { DetailCateComponent } from './category/detail-cate/detail-cate.component';
+import { ReplyContactComponent } from './contact/reply-contact/reply-contact.component';
 
 @NgModule({
     imports: [
@@ -25,7 +27,9 @@ import { TrashContactComponent } from './contact/trash-contact/trash-contact.com
       ListUserComponent,
       TrashUserComponent,
       ListContactComponent,
-      TrashContactComponent
+      TrashContactComponent,
+      DetailCateComponent,
+      ReplyContactComponent
     ]
 })
 export class AdminModule {
