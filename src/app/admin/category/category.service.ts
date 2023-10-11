@@ -12,7 +12,7 @@ export class CategoryService {
 
   // các phương thức khác
   getList(): Observable<any> {
-    return this.http.get<any>('https://localhost:7015/api/Categories')
+    return this.http.get<any>('https://localhost:7015/api/Categories/GetAllCategories')
   }
   getTrash(): Observable<any> {
     return this.http.get<any>('https://localhost:7015/api/Categories/GetTrash')
@@ -21,14 +21,22 @@ export class CategoryService {
     return this.http.get<any>('https://localhost:7015/api/Categories/id?id=' + cateId)
   }
   deleteCate(cateId: number): Observable<any> {
-    return this.http.delete<any>('https://localhost:7008/api/Products/id?id=' + cateId)
+    return this.http.delete<any>('https://localhost:7015/api/Categories/id?id=' + cateId)
   }
 
   addCate(data: any): Observable<any> {
-    return this.http.post<any>('https://localhost:7008/api/Products', data);
+    return this.http.post<any>('https://localhost:7015/api/Categories/CreateCategory', data);
   }
 
   editCate(cateId: any, data: any): Observable<any> {
-    return this.http.put<any>('https://localhost:7008/api/Products/id?id=' + cateId, data);
+    return this.http.put<any>('https://localhost:7015/api/Categories/id?ID=' + cateId, data);
+  }
+
+  delTrashCate(cateId: any): Observable<any> {
+    return this.http.get<any>('https://localhost:7015/api/Categories/DelTrash?ID=' + cateId);
+  }
+
+  ReTrashCate(cateId: any): Observable<any> {
+    return this.http.get<any>('https://localhost:7015/api/Categories/ReTrash?ID=' + cateId);
   }
 }
