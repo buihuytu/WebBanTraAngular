@@ -8,31 +8,22 @@ import { CategoryService } from '../category.service';
 export class ListCateComponent {
   listCate:any;
   constructor(private cs : CategoryService) {}
+  dtOptions = {
+    pagingType: 'full_numbers',
+    pageLength: 10,
+    processing: true,
+    lengthMenu : [10, 15, 20]
+  }
   getAll() {
     this.cs.getList().subscribe(res => {
       this.listCate = res.list;
-      setTimeout(()=>{   
-        $('#datatableexample').DataTable( {
-          pagingType: 'full_numbers',
-          pageLength: 10,
-          processing: true,
-          lengthMenu : [10, 15, 20],
-      } );
-      }, 1);
     })
   }
   ngOnInit(): void {
     this.getAll();
     setTimeout(()=>{  
       $('#datatableexample_wrapper').css('width', '100%');
-    }, 1000);
+    }, 100);
     
-  }
-
-  delTrashCategory(cateId: number) {
-    this.cs.delTrashCate(cateId).subscribe(res => {
-      this.getAll();
-      alert("Đã đẩy danh mục vào thùng rác")
-    })
   }
 }

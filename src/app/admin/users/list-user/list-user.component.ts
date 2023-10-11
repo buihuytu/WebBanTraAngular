@@ -9,24 +9,22 @@ import { UsersService } from '../users.service';
 export class ListUserComponent {
   listUser:any;
   constructor(private us : UsersService) {}
+  dtOptions = {
+    pagingType: 'full_numbers',
+    pageLength: 10,
+    processing: true,
+    lengthMenu : [10, 15, 20]
+  }
   getAll() {
     this.us.getList().subscribe(res => {
       this.listUser = res.list;
-      setTimeout(()=>{   
-        $('#datatableexample').DataTable( {
-          pagingType: 'full_numbers',
-          pageLength: 10,
-          processing: true,
-          lengthMenu : [10, 15, 20],
-      } );
-      }, 1);
     })
   }
   ngOnInit(): void {
     this.getAll();
     setTimeout(()=>{  
       $('#datatableexample_wrapper').css('width', '100%');
-    }, 1000);
+    }, 100);
     
   }
 }
