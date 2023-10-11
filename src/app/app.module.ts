@@ -21,6 +21,10 @@ import { ListUserComponent } from './admin/users/list-user/list-user.component';
 import { TrashUserComponent } from './admin/users/trash-user/trash-user.component';
 import { ListContactComponent } from './admin/contact/list-contact/list-contact.component';
 import { TrashContactComponent } from './admin/contact/trash-contact/trash-contact.component';
+import { EditCateComponent } from './admin/category/edit-cate/edit-cate.component';
+import { AddCateComponent } from './admin/category/add-cate/add-cate.component';
+import { DetailCateComponent } from './admin/category/detail-cate/detail-cate.component';
+import { ReplyContactComponent } from './admin/contact/reply-contact/reply-contact.component';
 
 @NgModule({
   declarations: [
@@ -36,12 +40,15 @@ import { TrashContactComponent } from './admin/contact/trash-contact/trash-conta
     DashboardComponent,
     ListCateComponent,
     TrashCateComponent,
-
+    EditCateComponent,
+    AddCateComponent,
+    DetailCateComponent,
     ListUserComponent,
     TrashUserComponent,
 
     ListContactComponent,
-    TrashContactComponent
+    TrashContactComponent,
+    ReplyContactComponent
   ],
   imports: [
     BrowserModule,

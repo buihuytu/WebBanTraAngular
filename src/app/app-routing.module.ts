@@ -16,6 +16,8 @@ import { ListUserComponent } from './admin/users/list-user/list-user.component';
 import { TrashUserComponent } from './admin/users/trash-user/trash-user.component';
 import { ListContactComponent } from './admin/contact/list-contact/list-contact.component';
 import { TrashContactComponent } from './admin/contact/trash-contact/trash-contact.component';
+import { DetailCateComponent } from './admin/category/detail-cate/detail-cate.component';
+import { ReplyContactComponent } from './admin/contact/reply-contact/reply-contact.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -30,11 +32,13 @@ const routes: Routes = [
   {path:'admin/category/index', component: ListCateComponent },
   {path:'admin/category/add', component: AddCateComponent },
   {path:'admin/category/edit/:cateId', component: EditCateComponent },
+  {path:'admin/category/detail/:cateId', component: DetailCateComponent },
   {path:'admin/category/trash', component: TrashCateComponent },
   {path:'admin/user/index', component: ListUserComponent },
   {path:'admin/user/trash', component: TrashUserComponent },
   {path:'admin/contact/index', component: ListContactComponent },
   {path:'admin/contact/trash', component: TrashContactComponent },
+  {path:'admin/contact/reply/:contactId', component: ReplyContactComponent },
 
 ];
 

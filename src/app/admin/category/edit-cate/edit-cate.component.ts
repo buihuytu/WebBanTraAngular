@@ -7,15 +7,14 @@ import { CategoryService } from '../category.service';
   selector: 'app-edit-cate',
   templateUrl: './edit-cate.component.html',
   styleUrls: ['./edit-cate.component.css']
-})
+})  
 export class EditCateComponent {
-  cateById: any;
-
-  Id: any;
-  Name: any;
-  MetaTitle: any;
-  MetaKey: any;
-  MetaDesc: any;
+  submited: boolean = false;
+  Id!: number;
+  Name!: string;
+  MetaTitle!: string;
+  MetaKey!: string;
+  MetaDesc!: string;
 
   editCategory = this.fb.group({
     Id: ['', Validators.required],
@@ -39,41 +38,53 @@ export class EditCateComponent {
         this.cs.getById(id).subscribe(res => {
             console.log(res); // hien thi ket qua tra ve
             this.editCategory = this.fb.group({
-                Id: [res.cateId, Validators.required],
-                Name: [res.cateName, Validators.required],
-                MetaTitle: [res.cateMetaTitle, Validators.required],
-                MetaKey: [res.cateMetaKey, Validators.required],
-                MetaDesc: [res.cateMetaDesc, Validators.required],
+                Id: [res.id, Validators.required],
+                Name: [res.name, Validators.required],
+                MetaTitle: [res.metaTitle, Validators.required],
+                MetaKey: [res.metaKey, Validators.required],
+                MetaDesc: [res.metaDesc, Validators.required],
             });
         });
     })
   }
 
-
-  onSubmit() {
+  get f() {return this.editCategory.controls;}
+  
+  onSubmit(): any {
+    this.submited = true;
+    
     if(!this.editCategory.invalid){
-        console.log(this.editCategory.value);
+      console.log(this.editCategory.value);
+      this.Id = +this.editCategory.value.Id!; // + (conver int)
+      this.Name= this.editCategory.value.Name!;
+      this.MetaDesc = this.editCategory.value.MetaDesc!;
+      this.MetaKey = this.editCategory.value.MetaKey!;
+      this.MetaTitle = this.editCategory.value.MetaTitle!;
+      
+      //sửa
+      this.cs.editCate(this.Id, { 
+        Id: this.Id,
+        Name: this.Name,
+        MetaTitle: this.MetaTitle,
+        MetaKey: this.MetaKey,
+        MetaDesc: this.MetaDesc}).subscribe(res => {
+            if(res.messageStatus == 200){
+              alert('Cập nhật danh mục thành công');
+              // reset form
+              // this.editCategory = this.fb.group({
+              //   Id: ['', Validators.required],
+              //   Name: ['', Validators.required],
+              //   MetaTitle: ['', Validators.required],
+              //   MetaKey: ['', Validators.required],
+              //   MetaDesc: ['', Validators.required],
+              // });
+              this.submited = false;
+              this.router.navigate(['/admin/category/index'])
+            }
+            else{
+              console.log(res);
+            }
+      })
     }
-    
-    this.Id = this.editCategory.value.Id;
-    this.Name= this.editCategory.value.Name;
-    this.MetaDesc = this.editCategory.value.MetaDesc;
-    this.MetaKey = this.editCategory.value.MetaKey;
-    this.MetaTitle = this.editCategory.value.MetaTitle;
-    
-
-    var val = new FormData();
-    val.append("Id", this.Id);
-    val.append("Name", this.Name);
-    val.append("MetaTitle", this.MetaTitle);
-    val.append("MetaKey", this.MetaKey);
-    val.append("MetaDesc", this.MetaDesc);
-    
-    //sua
-    this.cs.editCate(this.Id, val).subscribe(res => {
-        console.log(res);    
-        alert("Edit Successfully!!!");
-        this.router.navigate(['/category/index'])
-    })
   }
 }
