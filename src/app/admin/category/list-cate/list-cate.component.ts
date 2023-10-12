@@ -35,4 +35,11 @@ export class ListCateComponent {
       alert("Đã đẩy danh mục vào thùng rác")
     })
   }
+
+  changeActive(cateId: number) {
+    this.cs.ChangeStatus(cateId).subscribe(res => {
+      // this.getAll();
+      alert("Thay đổi trạng thái thành công");
+    })
+  }
 }

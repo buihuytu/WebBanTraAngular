@@ -38,9 +38,9 @@
                 </svg>
                 <span class="caret">Loại sản phẩm</span>
                 <ul class="nested">
-                    <li><a routerLink="/admin/category/index"><span>Danh sách</span></a></li>
-                    <li><a routerLink="/admin/category/add"><span>Thêm mới</span></a></li>
-                    <li><a routerLink="/admin/category/trash"><span>Thùng rác</span></a></li>
+                    <li><a [routerLink]="['/admin/category/index']"><span>Danh sách</span></a></li>
+                    <li><a [routerLink]="['/admin/category/add']"><span>Thêm mới</span></a></li>
+                    <li><a [routerLink]="['/admin/category/trash']"><span>Thùng rác</span></a></li>
                 </ul>
             </li>
             <li>
@@ -77,8 +77,8 @@
                 </svg>
                 <span class="caret">Liên hệ</span>
                 <ul class="nested">
-                    <li><a routerLink="/admin/contact/index"><span>Danh sách</span></a></li>
-                    <li><a routerLink="/admin/contact/trash"><span>Thùng rác</span></a></li>
+                    <li><a [routerLink]="['/admin/contact/index']"><span>Danh sách</span></a></li>
+                    <li><a [routerLink]="['/admin/contact/trash']"><span>Thùng rác</span></a></li>
                 </ul>
             </li>
             <li>
@@ -89,9 +89,9 @@
                 </svg>
                 <span class="caret">Thành viên</span>
                 <ul class="nested">
-                    <li><a routerLink="/admin/user/index"><span>Danh sách</span></a></li>
-                    <li><a routerLink="../User/Create.html"><span>Thêm mới</span></a></li>
-                    <li><a routerLink="/admin/user/trash"><span>Thùng rác</span></a></li>
+                    <li><a [routerLink]="['/admin/user/index']"><span>Danh sách</span></a></li>
+                    <li><a [routerLink]="['admin/user/create']"><span>Thêm mới</span></a></li>
+                    <li><a [routerLink]="['/admin/user/trash']"><span>Thùng rác</span></a></li>
                 </ul>
             </li>
         </ul>

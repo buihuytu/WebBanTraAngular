@@ -17,4 +17,7 @@ export class UsersService {
   getTrash(): Observable<any> {
     return this.http.get<any>('https://localhost:7015/api/Users/GetTrash')
   }
+  getUserById(userId): Observable<any> {
+    return this.http.get<any>('https://localhost:7015/api/Users/id?id=' + userId)
+  }
 }

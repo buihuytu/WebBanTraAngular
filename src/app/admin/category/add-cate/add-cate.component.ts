@@ -52,11 +52,12 @@ export class AddCateComponent {
         MetaTitle: this.MetaTitle,
         MetaKey: this.MetaKey,
         MetaDesc: this.MetaDesc,
-        IsAcive: this.IsActive}).subscribe(res => {
+        IsActive: this.IsActive}).subscribe(res => {
             if(res.messageStatus == 200){
               alert('Thêm danh mục thành công');
               this.submited = false;
               this.router.navigate(['/admin/category/index'])
+              console.log(res);
             }
             else{
               console.log(res);

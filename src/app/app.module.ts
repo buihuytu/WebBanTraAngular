@@ -27,6 +27,7 @@ import { EditCateComponent } from './admin/category/edit-cate/edit-cate.componen
 import { AddCateComponent } from './admin/category/add-cate/add-cate.component';
 import { DetailCateComponent } from './admin/category/detail-cate/detail-cate.component';
 import { ReplyContactComponent } from './admin/contact/reply-contact/reply-contact.component';
+import { DetailUserComponent } from './admin/users/detail-user/detail-user.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ReplyContactComponent } from './admin/contact/reply-contact/reply-conta
     DetailCateComponent,
     ListUserComponent,
     TrashUserComponent,
+    DetailUserComponent,
 
     ListContactComponent,
     TrashContactComponent,

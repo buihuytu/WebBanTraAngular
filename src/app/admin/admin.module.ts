@@ -13,6 +13,7 @@ import { ListContactComponent } from './contact/list-contact/list-contact.compon
 import { TrashContactComponent } from './contact/trash-contact/trash-contact.component';
 import { DetailCateComponent } from './category/detail-cate/detail-cate.component';
 import { ReplyContactComponent } from './contact/reply-contact/reply-contact.component';
+import { DetailUserComponent } from './users/detail-user/detail-user.component';
 
 @NgModule({
     imports: [
@@ -29,7 +30,8 @@ import { ReplyContactComponent } from './contact/reply-contact/reply-contact.com
       ListContactComponent,
       TrashContactComponent,
       DetailCateComponent,
-      ReplyContactComponent
+      ReplyContactComponent,
+      DetailUserComponent
     ]
 })
 export class AdminModule {

@@ -39,4 +39,8 @@ export class CategoryService {
   ReTrashCate(cateId: any): Observable<any> {
     return this.http.get<any>('https://localhost:7015/api/Categories/ReTrash?ID=' + cateId);
   }
+
+  ChangeStatus(cateId: any): Observable<any> {
+    return this.http.get<any>('https://localhost:7015/api/Categories/ChangeStatus?ID=' + cateId);
+  }
 }

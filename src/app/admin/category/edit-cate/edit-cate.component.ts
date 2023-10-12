@@ -15,6 +15,7 @@ export class EditCateComponent {
   MetaTitle!: string;
   MetaKey!: string;
   MetaDesc!: string;
+  IsActive!: number;
 
   editCategory = this.fb.group({
     Id: ['', Validators.required],
@@ -22,6 +23,7 @@ export class EditCateComponent {
     MetaTitle: ['', Validators.required],
     MetaKey: ['', Validators.required],
     MetaDesc: ['', Validators.required],
+    IsActive: ['', Validators.required],
   });
 
   constructor(
@@ -43,6 +45,7 @@ export class EditCateComponent {
                 MetaTitle: [res.metaTitle, Validators.required],
                 MetaKey: [res.metaKey, Validators.required],
                 MetaDesc: [res.metaDesc, Validators.required],
+                IsActive: [res.isActive],
             });
         });
     })
@@ -60,14 +63,15 @@ export class EditCateComponent {
       this.MetaDesc = this.editCategory.value.MetaDesc!;
       this.MetaKey = this.editCategory.value.MetaKey!;
       this.MetaTitle = this.editCategory.value.MetaTitle!;
-      
+      this.IsActive = +this.editCategory.value.IsActive!;
       //sửa
       this.cs.editCate(this.Id, { 
         Id: this.Id,
         Name: this.Name,
         MetaTitle: this.MetaTitle,
         MetaKey: this.MetaKey,
-        MetaDesc: this.MetaDesc}).subscribe(res => {
+        MetaDesc: this.MetaDesc,
+        IsActive: this.IsActive}).subscribe(res => {
             if(res.messageStatus == 200){
               alert('Cập nhật danh mục thành công');
               // reset form
