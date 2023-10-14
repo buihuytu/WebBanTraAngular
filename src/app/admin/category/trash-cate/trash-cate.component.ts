@@ -32,7 +32,7 @@ export class TrashCateComponent {
   delCate(cateId: number) {
     this.cs.deleteCate(cateId).subscribe(res => {
       this.getListTrash();
-      alert("Đã xóa danh mục vào thùng rác")
+      alert("Đã xóa danh mục thành công")
     })
   }
 

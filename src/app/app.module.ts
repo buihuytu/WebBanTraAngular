@@ -28,6 +28,8 @@ import { AddCateComponent } from './admin/category/add-cate/add-cate.component';
 import { DetailCateComponent } from './admin/category/detail-cate/detail-cate.component';
 import { ReplyContactComponent } from './admin/contact/reply-contact/reply-contact.component';
 import { DetailUserComponent } from './admin/users/detail-user/detail-user.component';
+import { AddUserComponent } from './admin/users/add-user/add-user.component';
+import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { DetailUserComponent } from './admin/users/detail-user/detail-user.compo
     ListUserComponent,
     TrashUserComponent,
     DetailUserComponent,
+    AddUserComponent,
+    EditUserComponent,
 
     ListContactComponent,
     TrashContactComponent,

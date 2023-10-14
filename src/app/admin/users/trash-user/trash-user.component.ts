@@ -27,6 +27,19 @@ export class TrashUserComponent {
     setTimeout(()=>{  
       $('#datatableexample_wrapper').css('width', '100%');
     }, 1000);
-    
+  }
+
+  delUser(userId: number) {
+    this.cs.deleteUser(userId).subscribe(res => {
+      this.getListTrash();
+      alert("Đã xóa thành viên thành công")
+    })
+  }
+
+  ReTrash(userId: number) {
+    this.cs.ReTrashUser(userId).subscribe(res => {
+      this.getListTrash();
+      alert("Đã khôi phục thành viên thành công")
+    })
   }
 }
