@@ -14,6 +14,8 @@ import { TrashContactComponent } from './contact/trash-contact/trash-contact.com
 import { DetailCateComponent } from './category/detail-cate/detail-cate.component';
 import { ReplyContactComponent } from './contact/reply-contact/reply-contact.component';
 import { DetailUserComponent } from './users/detail-user/detail-user.component';
+import { AddUserComponent } from './users/add-user/add-user.component';
+import { EditUserComponent } from './users/edit-user/edit-user.component';
 
 @NgModule({
     imports: [
@@ -31,7 +33,9 @@ import { DetailUserComponent } from './users/detail-user/detail-user.component';
       TrashContactComponent,
       DetailCateComponent,
       ReplyContactComponent,
-      DetailUserComponent
+      DetailUserComponent,
+      AddUserComponent,
+      EditUserComponent
     ]
 })
 export class AdminModule {

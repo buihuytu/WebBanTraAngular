@@ -38,7 +38,7 @@ export class ListCateComponent {
 
   changeActive(cateId: number) {
     this.cs.ChangeStatus(cateId).subscribe(res => {
-      // this.getAll();
+      this.getAll();
       alert("Thay đổi trạng thái thành công");
     })
   }

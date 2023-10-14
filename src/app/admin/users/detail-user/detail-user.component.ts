@@ -11,7 +11,7 @@ export class DetailUserComponent {
   detailUser!: any;
 
   constructor(
-    private cs: UsersService,
+    private us: UsersService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
   ) {}
@@ -19,15 +19,15 @@ export class DetailUserComponent {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(query => {
       let id = query.get("userId");
-      this.cs.getUserById(id).subscribe(res => {
+      this.us.getUserById(id).subscribe(res => {
         this.detailUser = res  });
       });
   }
 
-  // delTrashCategory(cateId: number) {
-  //   this.cs.delTrashCate(cateId).subscribe(res => {
-  //     alert("Đã đẩy danh mục vào thùng rác")
-  //   })
-  //   this.router.navigate(['/admin/category/index'])
-  // }
+  delTrash(userId: number) {
+    this.us.delTrashUser(userId).subscribe(res => {
+      alert("Đã đẩy thành viên vào thùng rác")
+    })
+    this.router.navigate(['/admin/user/index'])
+  }
 }
