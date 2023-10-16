@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { AdminRoutes } from './admin.routing';
@@ -14,10 +14,20 @@ import { TrashContactComponent } from './contact/trash-contact/trash-contact.com
 import { DetailCateComponent } from './category/detail-cate/detail-cate.component';
 import { ReplyContactComponent } from './contact/reply-contact/reply-contact.component';
 import { DetailUserComponent } from './users/detail-user/detail-user.component';
+import { AddProductComponent } from './product/add-product/add-product.component';
+import { EditProductComponent } from './product/edit-product/edit-product.component';
+import { DetailProductComponent } from './product/detail-product/detail-product.component';
+import { ListProductComponent } from './product/list-product/list-product.component';
+import { TrashProductComponent } from './product/trash-product/trash-product.component';
+import { AddImageComponent } from './product-image/add-image/add-image.component';
+import { TrashImageComponent } from './product-image/trash-image/trash-image.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { ListImageComponent } from './product-image/list-image/list-image.component';
 
 @NgModule({
     imports: [
-      RouterModule.forChild(AdminRoutes),
+    RouterModule.forChild(AdminRoutes),
+      BrowserModule
     ],
     declarations: [
       MenuComponent,
@@ -31,8 +41,16 @@ import { DetailUserComponent } from './users/detail-user/detail-user.component';
       TrashContactComponent,
       DetailCateComponent,
       ReplyContactComponent,
-      DetailUserComponent
-    ]
+      DetailUserComponent,
+      AddProductComponent,
+      EditProductComponent,
+      DetailProductComponent,
+      ListProductComponent,
+      TrashProductComponent,
+      AddImageComponent,
+      TrashImageComponent,
+      ListImageComponent
+  ]
 })
 export class AdminModule {
 }

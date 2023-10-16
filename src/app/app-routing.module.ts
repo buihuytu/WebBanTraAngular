@@ -20,6 +20,11 @@ import { TrashContactComponent } from './admin/contact/trash-contact/trash-conta
 import { DetailCateComponent } from './admin/category/detail-cate/detail-cate.component';
 import { ReplyContactComponent } from './admin/contact/reply-contact/reply-contact.component';
 import { DetailUserComponent } from './admin/users/detail-user/detail-user.component';
+import { ListProductComponent } from './admin/product/list-product/list-product.component';
+import { AddProductComponent } from './admin/product/add-product/add-product.component';
+import { EditProductComponent } from './admin/product/edit-product/edit-product.component';
+import { TrashProductComponent } from './admin/product/trash-product/trash-product.component';
+import { DetailProductComponent } from './admin/product/detail-product/detail-product.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -37,6 +42,11 @@ const routes: Routes = [
   {path:'admin/category/edit/:cateId', component: EditCateComponent },
   {path:'admin/category/detail/:cateId', component: DetailCateComponent },
   {path:'admin/category/trash', component: TrashCateComponent },
+  {path:'admin/product/index', component: ListProductComponent },
+  {path:'admin/product/add', component: AddProductComponent },
+  {path:'admin/product/edit/:productId', component: EditProductComponent },
+  {path:'admin/product/detail/:productId', component: DetailProductComponent },
+  {path:'admin/product/trash', component: TrashProductComponent },
   {path:'admin/user/index', component: ListUserComponent },
   {path:'admin/user/trash', component: TrashUserComponent },
   {path:'admin/user/detail/:userId', component: DetailUserComponent },

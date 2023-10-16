@@ -28,6 +28,11 @@ import { AddCateComponent } from './admin/category/add-cate/add-cate.component';
 import { DetailCateComponent } from './admin/category/detail-cate/detail-cate.component';
 import { ReplyContactComponent } from './admin/contact/reply-contact/reply-contact.component';
 import { DetailUserComponent } from './admin/users/detail-user/detail-user.component';
+import { ListProductComponent } from './admin/product/list-product/list-product.component';
+import { TrashProductComponent } from './admin/product/trash-product/trash-product.component';
+import { EditProductComponent } from './admin/product/edit-product/edit-product.component';
+import { AddProductComponent } from './admin/product/add-product/add-product.component';
+import { DetailProductComponent } from './admin/product/detail-product/detail-product.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +55,11 @@ import { DetailUserComponent } from './admin/users/detail-user/detail-user.compo
     ListUserComponent,
     TrashUserComponent,
     DetailUserComponent,
+    ListProductComponent,
+    TrashProductComponent,
+    EditProductComponent,
+    AddProductComponent,
+    DetailProductComponent,
 
     ListContactComponent,
     TrashContactComponent,
