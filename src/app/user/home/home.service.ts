@@ -10,10 +10,11 @@ export class HomeService {
 
   constructor(private http: HttpClient) { }
 
-  // các phương thức khác
   getListSlider(): Observable<any> {
     return this.http.get<any>('https://localhost:7015/api/Sliders')
   }
 
-  
+  getHotProduct(): Observable<any>{
+    return this.http.get<any>('https://localhost:7015/api/Products/GetHotProduct');
+  }
 }

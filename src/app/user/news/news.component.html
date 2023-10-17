@@ -13,8 +13,11 @@
             </div>
 
         </div>
-        <div class="pagination">
-            <!-- @Html.PagedListPager(Model, page => Url.Action("News", new { page })) -->
-        </div>
+        <pagination
+            [currentPage]="currentPage"
+            [pageSize]="pageSize"
+            [totalItem]="totalNews"
+            (changePage)="changePage($event)"
+        ></pagination>
     </div>
 </section>

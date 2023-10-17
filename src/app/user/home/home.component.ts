@@ -8,15 +8,15 @@ import { HomeService } from './home.service';
 })
 export class HomeComponent implements OnInit{
   slidesSlider: any[] = [];
-  slidesHotProducts = [
-    { img: '../assets/Pictures/trang-chu/product-1.png' },
-    { img: '../assets/Pictures/trang-chu/product-2.png' },
-    { img: '../assets/Pictures/trang-chu/product-3.png' },
-    { img: '../assets/Pictures/trang-chu/product-4.png' },
-    { img: '../assets/Pictures/trang-chu/product-4.png' },
-  ];
+  slidesHotProducts: any[] = [];
 
-  slideConfig = { slidesToShow: 4, slidesToScroll: 4 };
+  slideConfig = { 
+    slidesToShow: 4, 
+    slidesToScroll: 4,
+    nextArrow: '<img class="btnNext-prod" src="../../../assets/Pictures/trang-chu/nextButton.png" >',
+    prevArrow: '<img class="btnPrev-prod" src="../../../assets/Pictures/trang-chu/backButton.png" >' 
+  };
+  slideConfigSlider = { slidesToShow: 1, slidesToScroll: 1 };
   slickInit(e: any) {
     console.log('slick initialized');
   }
@@ -38,7 +38,14 @@ export class HomeComponent implements OnInit{
     });
   }
 
+  getHotProduct(){
+    this.ps.getHotProduct().subscribe(res => {
+      this.slidesHotProducts =  res.list;
+    })
+  }
+
   ngOnInit(){
     this.getAll();
+    this.getHotProduct();
   }
 }

@@ -22,13 +22,13 @@ export class PostComponent implements OnInit, AfterViewInit {
   ){}
   
   ngAfterViewInit(): void {
-    this.slug = this.activatedRoute.snapshot.params['slug'];
-    console.log(this.slug);
-    this.getPost(this.slug);
+    
   }
 
   ngOnInit(): void {
-     
+    this.slug = this.activatedRoute.snapshot.params['slug'];
+    console.log(this.slug);
+    this.getPost(this.slug);
   }
   
   getPost(slug: string){

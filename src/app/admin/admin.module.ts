@@ -1,7 +1,6 @@
 import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { AdminRoutes } from './admin.routing';
 import { MenuComponent } from './menu/menu.component';
 import { ListCateComponent } from './category/list-cate/list-cate.component';
 import { AddCateComponent } from './category/add-cate/add-cate.component';
@@ -25,35 +24,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ListImageComponent } from './product-image/list-image/list-image.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
+import { AppRoutingModule } from '../app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { DataTablesModule } from 'angular-datatables';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     imports: [
-    RouterModule.forChild(AdminRoutes),
-      BrowserModule
+      
     ],
     declarations: [
-      MenuComponent,
-      AddCateComponent,
-      EditCateComponent,
-      ListCateComponent,
-      TrashCateComponent,
-      ListUserComponent,
-      TrashUserComponent,
-      ListContactComponent,
-      TrashContactComponent,
-      DetailCateComponent,
-      ReplyContactComponent,
-      DetailUserComponent,
-      AddProductComponent,
-      EditProductComponent,
-      DetailProductComponent,
-      ListProductComponent,
-      TrashProductComponent,
-      AddImageComponent,
-      TrashImageComponent,
-      ListImageComponent,
-      AddUserComponent,
-      EditUserComponent
+      
   ]
       
 })

@@ -15,7 +15,6 @@ import { HomeComponent } from './user/home/home.component';
 import { NewsComponent } from './user/news/news.component';
 import { PostComponent } from './user/post/post.component';
 import { MenuComponent } from './admin/menu/menu.component';
-import { DataTablesModule } from 'angular-datatables';
 import { DashboardComponent } from './admin/dashboard/dasboard.component';
 import { ListCateComponent } from './admin/category/list-cate/list-cate.component';
 import { TrashCateComponent } from './admin/category/trash-cate/trash-cate.component';
@@ -36,9 +35,21 @@ import { DetailProductComponent } from './admin/product/detail-product/detail-pr
 import { AddUserComponent } from './admin/users/add-user/add-user.component';
 import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
 
+import { DataTablesModule } from 'angular-datatables';
+import { PaginationComponent } from './user/pagination/pagination.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { WebsiteComponent } from './user/website.component';
+import { AdminComponent } from './admin/admin.component';
+import { MatSliderModule } from '@angular/material/slider'
+import { AdminModule } from './admin/admin.module';
+import { ListImageComponent } from './admin/product-image/list-image/list-image.component';
+import { AddImageComponent } from './admin/product-image/add-image/add-image.component';
+import { TrashImageComponent } from './admin/product-image/trash-image/trash-image.component';
 @NgModule({
   declarations: [
     AppComponent,
+    WebsiteComponent,
     FooterComponent,
     HomeComponent,
     HeaderComponent,
@@ -47,7 +58,10 @@ import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
     ContactComponent,
     NewsComponent,
     PostComponent,
+    PaginationComponent,
+
     MenuComponent,
+    AdminComponent,
     DashboardComponent,
     ListCateComponent,
     TrashCateComponent,
@@ -62,23 +76,27 @@ import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
     EditProductComponent,
     AddProductComponent,
     DetailProductComponent,
+    ListImageComponent,
     AddUserComponent,
     EditUserComponent,
-
     ListContactComponent,
     TrashContactComponent,
-
-    ReplyContactComponent
+    ReplyContactComponent,
+    AddImageComponent,
+    TrashImageComponent,
 
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     SlickCarouselModule,
-    DataTablesModule
+    DataTablesModule,
+    CommonModule,
+    MatSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

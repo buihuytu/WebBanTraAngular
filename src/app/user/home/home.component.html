@@ -7,7 +7,7 @@
     <div class="banner-slider">
         <ngx-slick-carousel class="carousel" 
             #slickModal="slick-carousel" 
-            [config]="slideConfig" 
+            [config]="slideConfigSlider" 
             (init)="slickInit($event)"
             (breakpoint)="breakpoint($event)"
             (afterChange)="afterChange($event)"
@@ -46,8 +46,8 @@
                 (beforeChange)="beforeChange($event)">
                 <div class="product-slider" style="background-color: white !important; border: none;" ngxSlickItem *ngFor="let slide of slidesHotProducts" class="slide">
                     <div class="product-item" >
-                        <img src="{{ slide.img }}" alt="" width="100%">
-                        <h6 class="text-center mt-3"><a href="#">TRÀ ƯỚP BÔNG SEN</a></h6>
+                        <img src="{{ '../assets/products/' + slide.productImg }}" alt="" width="100%" height="200px">
+                        <h6 class="text-center mt-3"><a href="/product-detail/{{slide.slug}}">{{ slide.productName }}</a></h6>
                     </div>
                 </div>
             </ngx-slick-carousel>

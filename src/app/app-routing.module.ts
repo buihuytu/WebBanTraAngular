@@ -27,37 +27,53 @@ import { TrashProductComponent } from './admin/product/trash-product/trash-produ
 import { DetailProductComponent } from './admin/product/detail-product/detail-product.component';
 import { AddUserComponent } from './admin/users/add-user/add-user.component';
 import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
+import { AdminComponent } from './admin/admin.component';
+import { WebsiteComponent } from './user/website.component';
+
+
 
 const routes: Routes = [
-  {path:'', component: HomeComponent},
-  {path:'about', component: AboutComponent},
-  {path:'contact', component: ContactComponent},
-  {path:'news', component: NewsComponent},
-  {path:'post/:slug', component: PostComponent},
-  {path:'product', component: ProductComponent},
-  {path:'product-detail', component: ProductDetailComponent},
-  {path:'product-not-found', component: ProductNotFoundComponent },
-
-  {path:'admin/dashboard', component: DashboardComponent },
-  {path:'admin/category/index', component: ListCateComponent },
-  {path:'admin/category/add', component: AddCateComponent },
-  {path:'admin/category/edit/:cateId', component: EditCateComponent },
-  {path:'admin/category/detail/:cateId', component: DetailCateComponent },
-  {path:'admin/category/trash', component: TrashCateComponent },
-  {path:'admin/product/index', component: ListProductComponent },
-  {path:'admin/product/add', component: AddProductComponent },
-  {path:'admin/product/edit/:productId', component: EditProductComponent },
-  {path:'admin/product/detail/:productId', component: DetailProductComponent },
-  {path:'admin/product/trash', component: TrashProductComponent },
-  {path:'admin/user/index', component: ListUserComponent },
-  {path:'admin/user/trash', component: TrashUserComponent },
-  {path:'admin/user/create', component: AddUserComponent },
-  {path:'admin/user/edit/:userId', component: EditUserComponent },
-  {path:'admin/user/detail/:userId', component: DetailUserComponent },
-  {path:'admin/contact/index', component: ListContactComponent },
-  {path:'admin/contact/trash', component: TrashContactComponent },
-  {path:'admin/contact/reply/:contactId', component: ReplyContactComponent },
-
+  { 
+    path: '', 
+    component: WebsiteComponent,
+    children: [
+      { path: '', component: HomeComponent},
+      { path: 'about', component: AboutComponent },
+      { path: 'contact', component: ContactComponent },
+      {path:'news', component: NewsComponent},
+      {path:'post/:slug', component: PostComponent},
+      {path:'product', component: ProductComponent},
+      {path:'product-detail/:slug', component: ProductDetailComponent},
+      {path:'product-not-found', component: ProductNotFoundComponent },
+    ]
+  },
+    
+  { 
+    path: 'admin', 
+    component: AdminComponent,
+    children: [
+      {path:'dashboard', component: DashboardComponent },
+      {path:'category/index', component: ListCateComponent },
+      {path:'category/add', component: AddCateComponent },
+      {path:'category/edit/:cateId', component: EditCateComponent },
+      {path:'category/detail/:cateId', component: DetailCateComponent },
+      {path:'category/trash', component: TrashCateComponent },
+      {path:'product/index', component: ListProductComponent },
+      {path:'product/add', component: AddProductComponent },
+      {path:'product/edit/:productId', component: EditProductComponent },
+      {path:'product/detail/:productId', component: DetailProductComponent },
+      {path:'product/trash', component: TrashProductComponent },
+      {path:'user/index', component: ListUserComponent },
+      {path:'user/trash', component: TrashUserComponent },
+      {path:'user/create', component: TrashUserComponent },
+      {path:'user/edit/:userId', component: EditUserComponent },
+      {path:'user/detail/:userId', component: DetailUserComponent },
+      {path:'contact/index', component: ListContactComponent },
+      {path:'contact/trash', component: TrashContactComponent },
+      {path:'contact/reply/:contactId', component: ReplyContactComponent },
+    ]
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
