@@ -23,6 +23,8 @@ import { AddImageComponent } from './product-image/add-image/add-image.component
 import { TrashImageComponent } from './product-image/trash-image/trash-image.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { ListImageComponent } from './product-image/list-image/list-image.component';
+import { AddUserComponent } from './users/add-user/add-user.component';
+import { EditUserComponent } from './users/edit-user/edit-user.component';
 
 @NgModule({
     imports: [
@@ -49,8 +51,11 @@ import { ListImageComponent } from './product-image/list-image/list-image.compon
       TrashProductComponent,
       AddImageComponent,
       TrashImageComponent,
-      ListImageComponent
+      ListImageComponent,
+      AddUserComponent,
+      EditUserComponent
   ]
+      
 })
 export class AdminModule {
 }

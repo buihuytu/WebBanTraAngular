@@ -29,4 +29,18 @@ export class ListUserComponent {
     }, 1000);
     
   }
+
+  delTrash(userId: number) {
+    this.us.delTrashUser(userId).subscribe(res => {
+      this.getAll();
+      alert("Đã đẩy thành viên vào thùng rác")
+    })
+  }
+
+  changeActive(userId: number) {
+    this.us.ChangeStatus(userId).subscribe(res => {
+      this.getAll();
+      alert("Thay đổi trạng thái thành công");
+    })
+  }
 }

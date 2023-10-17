@@ -33,6 +33,8 @@ import { TrashProductComponent } from './admin/product/trash-product/trash-produ
 import { EditProductComponent } from './admin/product/edit-product/edit-product.component';
 import { AddProductComponent } from './admin/product/add-product/add-product.component';
 import { DetailProductComponent } from './admin/product/detail-product/detail-product.component';
+import { AddUserComponent } from './admin/users/add-user/add-user.component';
+import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,8 @@ import { DetailProductComponent } from './admin/product/detail-product/detail-pr
     EditProductComponent,
     AddProductComponent,
     DetailProductComponent,
+    AddUserComponent,
+    EditUserComponent,
 
     ListContactComponent,
     TrashContactComponent,

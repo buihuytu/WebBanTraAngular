@@ -25,6 +25,8 @@ import { AddProductComponent } from './admin/product/add-product/add-product.com
 import { EditProductComponent } from './admin/product/edit-product/edit-product.component';
 import { TrashProductComponent } from './admin/product/trash-product/trash-product.component';
 import { DetailProductComponent } from './admin/product/detail-product/detail-product.component';
+import { AddUserComponent } from './admin/users/add-user/add-user.component';
+import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -49,6 +51,8 @@ const routes: Routes = [
   {path:'admin/product/trash', component: TrashProductComponent },
   {path:'admin/user/index', component: ListUserComponent },
   {path:'admin/user/trash', component: TrashUserComponent },
+  {path:'admin/user/create', component: AddUserComponent },
+  {path:'admin/user/edit/:userId', component: EditUserComponent },
   {path:'admin/user/detail/:userId', component: DetailUserComponent },
   {path:'admin/contact/index', component: ListContactComponent },
   {path:'admin/contact/trash', component: TrashContactComponent },
