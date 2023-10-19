@@ -1,62 +1,85 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
 import { ProductService } from '../product.service';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { CategoryService } from '../../category/category.service';
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent {
-submited: boolean = false;
+  submited: boolean = false;
   Name!: string;
-  MetaTitle!: string;
-  MetaKey!: string;
-  MetaDesc!: string;
+  CateId!: number;
+  Mass!: number;
+  Price!: number;
+  Description!: string;
+  Detail!: string;
   IsActive!: number;
+  FileImage!: File;
+  listCategory: any;
 
   addProduct = this.fb.group({
     Name: ['', Validators.required],
-    MetaTitle: ['', Validators.required],
-    MetaKey: ['', Validators.required],
-    MetaDesc: ['', Validators.required],
+    CateId: ['', Validators.required],
+    Mass: ['', Validators.required],
+    Price: ['', Validators.required],
+    Description: [''],
+    Detail: [''],
     IsActive: ['', Validators.required],
   });
 
   constructor(
     private fb: FormBuilder, 
-    private cs: ProductService,
+    private us: ProductService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
+    private cs : CategoryService,
   ) { }
 
   get f() {return this.addProduct.controls;}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.cs.getList().subscribe(res => {
+      this.listCategory = res.list;
+    })
+  }
+  
+  onChange(event: any) {
+    this.FileImage = event.target.files[0];
+  }
 
   onSubmit(): any {
     this.submited = true;
-    
     if(!this.addProduct.invalid){
       console.log(this.addProduct.value);
       this.Name= this.addProduct.value.Name!;
-      this.MetaDesc = this.addProduct.value.MetaDesc!;
-      this.MetaKey = this.addProduct.value.MetaKey!;
-      this.MetaTitle = this.addProduct.value.MetaTitle!;
+      this.CateId = +this.addProduct.value.CateId!;
+      this.Mass = +this.addProduct.value.Mass!;
+      this.Price = +this.addProduct.value.Price!;
+      this.Description = this.addProduct.value.Description!;
+      this.Detail = this.addProduct.value.Detail!;
       this.IsActive = +this.addProduct.value.IsActive!;
       
+      console.log(this.FileImage)
+      var formAdd = new FormData();
+      formAdd.append("ProductName", this.Name);
+      formAdd.append("CategoryId", this.CateId.toString());
+      formAdd.append("Mass", this.Mass.toString());
+      formAdd.append("Price", this.Price.toString());
+      formAdd.append("Description", this.Description);
+      formAdd.append("Detail", this.Detail);
+      formAdd.append("IsActive", this.IsActive.toString());
+      formAdd.append("FileImage", this.FileImage);
+
+      console.log(formAdd)
       //thêm mới
-      this.cs.addProduct( { 
-        Name: this.Name,
-        MetaTitle: this.MetaTitle,
-        MetaKey: this.MetaKey,
-        MetaDesc: this.MetaDesc,
-        IsActive: this.IsActive}).subscribe(res => {
+      this.us.addProduct(formAdd).subscribe(res => {
             if(res.messageStatus == 200){
               alert('Thêm san pham thành công');
               this.submited = false;
-              this.router.navigate(['/admin/category/index'])
+              this.router.navigate(['/admin/product/index'])
               console.log(res);
             }
             else{

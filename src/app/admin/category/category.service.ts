@@ -12,7 +12,7 @@ export class CategoryService {
 
   // các phương thức khác
   getList(): Observable<any> {
-    return this.http.get<any>('https://localhost:7015/api/Categories')
+    return this.http.get<any>('https://localhost:7015/api/Categories/GetAllCategories')
   }
   getTrash(): Observable<any> {
     return this.http.get<any>('https://localhost:7015/api/Categories/GetTrash')

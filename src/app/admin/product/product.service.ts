@@ -14,10 +14,10 @@ export class ProductService {
   getList(): Observable<any> {
     return this.http.get<any>('https://localhost:7015/api/Products')
   }
-  getTrash(): Observable<any> {
-    return this.http.get<any>('https://localhost:7015/api/Products/GetTrash')
+  getTrashProduct(): Observable<any> {
+    return this.http.get<any>('https://localhost:7015/api/Products/Trash')
   }
-  getById(productId: any): Observable<any> {
+  getProductById(productId: any): Observable<any> {
     return this.http.get<any>('https://localhost:7015/api/Products/id?id=' + productId)
   }
   deleteProduct(productId: number): Observable<any> {
