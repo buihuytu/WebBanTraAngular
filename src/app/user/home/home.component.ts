@@ -13,22 +13,19 @@ export class HomeComponent implements OnInit{
   slideConfig = { 
     slidesToShow: 4, 
     slidesToScroll: 4,
-    nextArrow: '<img class="btnNext-prod" src="../../../assets/Pictures/trang-chu/nextButton.png" >',
-    prevArrow: '<img class="btnPrev-prod" src="../../../assets/Pictures/trang-chu/backButton.png" >' 
+    nextArrow: '<img class="btnNext-prod" style="position: absolute;top: 40%;right: -5%;cursor: pointer;" src="../../../assets/Pictures/trang-chu/nextButton.png" >',
+    prevArrow: '<img class="btnPrev-prod" style="position: absolute;top: 40%;left: -5%;cursor: pointer;" src="../../../assets/Pictures/trang-chu/backButton.png" >' 
   };
-  slideConfigSlider = { slidesToShow: 1, slidesToScroll: 1 };
-  slickInit(e: any) {
-    console.log('slick initialized');
-  }
-  breakpoint(e: any) {
-    console.log('breakpoint');
-  }
-  afterChange(e: any) {
-    console.log('afterChange');
-  }
-  beforeChange(e: any) {
-    console.log('beforeChange');
-  }
+  slideConfigSlider = { 
+    slidesToShow: 1, 
+    slidesToScroll: 1, 
+    dots: true,
+    infinite: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
+  
 
   constructor(private ps: HomeService){}
 

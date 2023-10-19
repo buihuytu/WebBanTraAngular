@@ -49,18 +49,6 @@ export class ProductDetailComponent implements OnInit, AfterViewInit {
     prevArrow: '<img class="btnPrev-slider" src="../../../assets/Pictures/trang-chu/backButton.png" >'
   };
   
-  slickInit(e: any) {
-    console.log('slick initialized');
-  }
-  breakpoint(e: any) {
-    console.log('breakpoint');
-  }
-  afterChange(e: any) {
-    console.log('afterChange');
-  }
-  beforeChange(e: any) {
-    console.log('beforeChange');
-  }
   constructor(
     private productDetailService: ProductDetailService,
     private router: Router,

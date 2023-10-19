@@ -65,7 +65,7 @@ const routes: Routes = [
       {path:'product/trash', component: TrashProductComponent },
       {path:'user/index', component: ListUserComponent },
       {path:'user/trash', component: TrashUserComponent },
-      {path:'user/create', component: TrashUserComponent },
+      {path:'user/create', component: AddUserComponent },
       {path:'user/edit/:userId', component: EditUserComponent },
       {path:'user/detail/:userId', component: DetailUserComponent },
       {path:'contact/index', component: ListContactComponent },

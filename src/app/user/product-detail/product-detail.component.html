@@ -33,11 +33,7 @@
                             <div class="col-md-9">
                                 <ngx-slick-carousel class="carousel slider-for" 
                                     #slickModal="slick-carousel" 
-                                    [config]="slideConfigProductImage" 
-                                    (init)="slickInit($event)"
-                                    (breakpoint)="breakpoint($event)"
-                                    (afterChange)="afterChange($event)"
-                                    (beforeChange)="beforeChange($event)">
+                                    [config]="slideConfigProductImage">
                                     
 
                                     <div ngxSlickItem *ngFor="let img of listImg;" >
@@ -50,7 +46,7 @@
                 </div>
                 <div class="col-md-5 col-sm-12">
                     <div class="detail-content">
-                        <h2>{{name}}</h2>
+                        <h2 style="font-size: 20px;">{{name}}</h2>
                         <div class="rating d-flex">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -66,7 +62,7 @@
                             Sản phẩm đạt chuẩn vệ sinh an toàn thực phẩm
                         </p>
                         <div class="detail-description">
-                            <div innerHTML="{{description}}"></div>
+                            <div style="font-size: 16px;" innerHTML="{{description}}"></div>
                         </div>
                     </div>
                 </div>
@@ -113,11 +109,7 @@
 
                 <ngx-slick-carousel class="carousel" 
                     #slickModal="slick-carousel" 
-                    [config]="slideConfig" 
-                    (init)="slickInit($event)"
-                    (breakpoint)="breakpoint($event)"
-                    (afterChange)="afterChange($event)"
-                    (beforeChange)="beforeChange($event)">
+                    [config]="slideConfig">
                     
 
                     <div ngxSlickItem class="product-item" *ngFor="let product of listOtherProduct;">

@@ -44,6 +44,7 @@
                     <p>
                         <input type="text" id="amount" readonly style="border:0; margin-top: 8px;">
                     </p>
+                    
                     <mat-slider min="0" step="50000" max="1000000" discrete="true" 
                         color="accent" showTickMarks="true">
                         <input matSliderStartThumb [(ngModel)]="startRange" (change)="changeRange()">
