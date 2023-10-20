@@ -89,6 +89,7 @@ import { AddNewComponent } from './admin/new/add-new/add-new.component';
     ReplyContactComponent,
     AddImageComponent,
     TrashImageComponent,
+    ListImageComponent,
     ListNewComponent,
     TrashNewComponent,
     AddNewComponent,

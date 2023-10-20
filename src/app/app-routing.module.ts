@@ -32,6 +32,7 @@ import { WebsiteComponent } from './user/website.component';
 import { AddNewComponent } from './admin/new/add-new/add-new.component';
 import { ListNewComponent } from './admin/new/list-new/list-new.component';
 import { TrashNewComponent } from './admin/new/trash-new/trash-new.component';
+import { ListImageComponent } from './admin/product-image/list-image/list-image.component';
 
 
 
@@ -77,6 +78,7 @@ const routes: Routes = [
       {path:'new/index', component: ListNewComponent },
       {path:'new/trash', component: TrashNewComponent },
       {path:'new/add', component: AddNewComponent },
+      {path:'product-img/:productId', component: ListImageComponent}
     ]
   },
   { path: '**', redirectTo: '' }
