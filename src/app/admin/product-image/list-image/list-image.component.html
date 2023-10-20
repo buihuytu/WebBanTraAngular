@@ -25,7 +25,7 @@
   <main>
     <div class="card">
       <div class="card-header d-flex justify-content-between">
-        <h5 class="h5-title" style="margin: 8px 20px">Quản lý sản phẩm</h5>
+        <h5 class="h5-title" style="margin: 8px 20px">Quản lý ảnh sản phẩm</h5>
         <div class="button" style="margin: 8px 20px">
           <button class="btn btn-primary btn-sm mr-2" data-toggle="modal" data-target="#exampleModalCenter"
             style="padding: 4px 8px;">
@@ -57,7 +57,7 @@
               <td><img src="../../../../assets/product-images/{{image.name}}" alt="" class="img-product"></td>
               <td>{{image.name}}</td>
               <td>
-                <button class="btn btn-danger" style="color: #fff; margin: 0 4px; padding: 4px 8px;">
+                <button class="btn btn-danger" style="color: #fff; margin: 0 4px; padding: 4px 8px;" (click)="DelImage(image.id)">
                   <svg xmlns="http://www.w3.org/2000/svg" style="fill: #fff;" height="1em" viewBox="0 0 448 512">
                     <path
                       d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" />
@@ -87,7 +87,7 @@
               <div class="form-group">
                 <label class="mb-2 font-weight-bold" for="">Chọn ảnh</label>
                 <div class="">
-                  <input class="control-label" type="file" value="" (change)="onChange($event)" multiple accept="image/*">
+                  <input class="control-label" type="file" value="" (change)="onChange($event)" accept="image/*">
                   <span class="field-validation-valid text-danger" data-valmsg-for="Image"
                     data-valmsg-replace="true"></span>
                 </div>
@@ -96,7 +96,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal" style="padding: 4px 8px;">Thoát</button>
-            <button type="button" class="btn btn-primary" style="padding: 4px 8px;">Lưu</button>
+            <button type="button" class="btn btn-primary" style="padding: 4px 8px;" (click)="onSubmit()">Lưu</button>
           </div>
         </div>
       </div>

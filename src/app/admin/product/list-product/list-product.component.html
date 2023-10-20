@@ -44,7 +44,8 @@
         <table class="table table-bordered table-striped mt-3" id="datatableexample">
           <thead>
             <tr>
-              <th>Ten san pham</th>
+              <th>Ảnh sản phẩm</th>
+              <th>Tên sản phẩm</th>
               <th>Tên danh mục</th>
               <th>Gia</th>
               <th>Hoạt động</th>
@@ -52,6 +53,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let product of listProduct">
+              <td><img height="60" width="60" src="../../../../assets/products/{{product.productImg}}"></td>
               <td>
                 <a [routerLink]="['/admin/product/detail', product.productId]">{{ product.productName }}</a>
               </td>

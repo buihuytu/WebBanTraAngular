@@ -15,11 +15,11 @@ export class ProductImageService {
     return this.http.get<any>('https://localhost:7015/api/ProductImages/productId?productId=' + productId)
   }
   
-  deleteProduct(productId: number, imageId: any): Observable<any> {
-    return this.http.delete<any>('https://localhost:7015/api/ProductImages/id?id=' + productId)
+  deleteProductImage(productId: any, imageId: any): Observable<any> {
+    return this.http.delete<any>('https://localhost:7015/api/ProductImages/productId/imageId?productId=' + productId + '&imageId=' + imageId)
   }
 
   addProductImage(data: any): Observable<any> {
-    return this.http.post<any>('https://localhost:7015/api/ProductImages/upload-nhieu-anh', data);
+    return this.http.post<any>('https://localhost:7015/api/ProductImages/upload-anh', data);
   }
 }

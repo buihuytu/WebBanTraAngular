@@ -75,17 +75,15 @@
         >
           <thead>
             <tr>
-              <th>Tên bài viết</th>
-              <th>Tóm tắt</th>
               <th>Ảnh</th>
+              <th>Tên bài viết</th>
               <th>Hoạt động</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let n of listNews">
+              <td><img height="80" width="80" src="../../../../assets/news/{{n.image}}"></td>
               <td>{{ n.name }}</td>
-              <td>{{ n.summary }}</td>
-              <td>{{ n.image }}</td>
               <td>
                 <label class="switch">
                   <input

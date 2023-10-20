@@ -18,7 +18,7 @@ export class ProductService {
 
 
   getAllCategory(): Observable<any>{
-    return this.http.get<any>('https://localhost:7015/api/Categories');
+    return this.http.get<any>('https://localhost:7015/api/Categories/GetAllCategories');
   }
 
   getAllProductByPriceRange(startRange: number, endRange: number, page: number): Observable<any> {
