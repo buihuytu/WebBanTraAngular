@@ -1,3 +1,4 @@
+@import url('../user/pagination.css');
 
 * {
     padding: 0;
@@ -45,7 +46,7 @@ ul {
     list-style: none;
 }
 
-a { color: black;}
+a { color: black; font-size: 16px;}
 
 a:hover {
     color: rgb(170, 188, 68);
@@ -66,6 +67,8 @@ button:hover {
 h2 {
     font-weight: bold;
     text-align: center;
+    font-family: 'svn-0'!important;
+    font-size: 26px !important;
 }
 
 .nav ul { display: flex;}

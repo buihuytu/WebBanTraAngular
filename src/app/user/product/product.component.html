@@ -31,13 +31,10 @@
                 <div class="category-product">
                     <h4>Loại sản phẩm</h4>
                     <form action="" class="form-cate-product">
-                        <!-- @foreach (var c in ViewBag.listCate)
-                        {
-                            <div style="margin-top:10px">
-                                <input type="checkbox" id="" name="" value="">
-                                <a href="@Url.Action("ProductsByCategory", "Home", new {slug = c.Slug})" for="">@c.Name</a>
-                            </div>
-                        } -->
+                        <div style="margin-top:10px" *ngFor="let cate of listCategory; let i = index">
+                            <input type="checkbox" name="something" style="margin-right:10px" [(ngModel)]="cate.checked" (change)="cateChange(cate.id)">
+                            <a>{{cate.name}}</a>
+                        </div>
                     </form>
                 </div>
 
@@ -47,7 +44,12 @@
                     <p>
                         <input type="text" id="amount" readonly style="border:0; margin-top: 8px;">
                     </p>
-
+                    
+                    <mat-slider min="0" step="50000" max="1000000" discrete="true" 
+                        color="accent" showTickMarks="true">
+                        <input matSliderStartThumb [(ngModel)]="startRange" (change)="changeRange()">
+                        <input matSliderEndThumb [(ngModel)]="endRange" (change)="changeRange()">
+                    </mat-slider>
 
                 </div>
 
@@ -73,45 +75,38 @@
             <div class="col-md-9 col-sm-6" style="margin-top: 40px;" id="mainList">
                 <div class="d-flex justify-content-end" style="margin-bottom: 40px;" id="sortProduct">
                     <div class="sort-product" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                        <div class="defaut-sort">
-                            <div>@ViewBag.Sort<i class="fa-solid fa-angle-down icon-down"></i></div>
-
-                        </div>
-                        <ul class="other-sort collapse" class="" id="collapseExample">
-                            <!-- <li><a href="@Url.Action("Product", "Home")">Thứ tự mặc định</a></li>
-                            <li><a href="@Url.Action("Product", "Home", new { sortOrder = "asc", typeSort = "price" })">Giá thấp đến cao</a></li>
-                            <li><a href="@Url.Action("Product", "Home", new { sortOrder = "desc", typeSort = "price" })">Giá cao đến thấp</a></li> -->
-                            <li><a href="">Xếp theo đánh giá</a></li>
-                            <li><a href="">Xếp theo phổ biến</a></li>
-                        </ul>
+                          <select #selectList (change)="mySelectHandler(selectList.value)">
+                            <option *ngFor="let vendor of vendors" value="{{ vendor.sortCode }}">{{ vendor.name }} </option>
+                          </select>
+                          
                     </div>
                 </div>
+
                 <div class="row" id="lstProduct">
-                    <!-- @{Random rnd = new Random();}
-                    @foreach (var row in Model)
-                    {
-                        int star = (rnd.Next(100));
-                        <div class="col-md-4 col-sm-6">
-                            <div class="product-item">
-                                <div class="product-rate d-flex">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <p>5</p>
-                                </div>
-                                <div class="new-product">
-                                    <p>NEW</p>
-                                </div>
-                                <img src="~/Public/Admin/Pictures/products/@row.Image" alt="" class="w-100" style="height: 200px">
-                                <h5><a href="@Url.Action("ProductDetail", "Home", new {@row.Slug})">@row.Name</a></h5>
-                                <div class="d-flex justify-content-center">
-                                    <p class="product-price">@String.Format("{0:0,0}", row.Price)<small> VND</small><span>/100gr</span></p>
-                                </div>
+                    <div class="col-md-4 col-sm-6" *ngFor="let product of listProduct;">
+                        <div class="product-item">
+                            <div class="product-rate d-flex">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <p>{{product.star}}</p>
+                            </div>
+                            <div class="new-product">
+                                <p>NEW</p>
+                            </div>
+                            <img src="{{'../assets/products/' + product.productImg}}" alt="" class="w-100" style="height: 200px">
+                            <h5>
+                                <a href="/product-detail/{{product.slug}}">
+                                    {{product.productName}}
+                                </a>
+                            </h5>
+                            <div class="d-flex justify-content-center">
+                                <p class="product-price">{{product.productPrice | number }}<small> VND</small><span>/100gr</span></p>
                             </div>
                         </div>
-                    } -->
+                    </div>
                 </div>
 
                 <div class="pagination">
@@ -121,4 +116,11 @@
             </div>
         </div>
     </div>
+    
+    <pagination
+        [currentPage]="currentPage"
+        [pageSize]="pageSize"
+        [totalItem]="totalProduct"
+        (changePage)="changePage($event)"
+    ></pagination>
 </section>

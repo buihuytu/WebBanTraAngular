@@ -11,7 +11,7 @@
                     <a [routerLink]="['/product']">Sản phẩm</a>
                     <i class="fa fa-angle-right"></i>
                 </li>
-                <li><a [routerLink]="['/product']">Chi tiết sản phẩm</a></li>
+                <li><a href="/product-detail/{{slug}}">{{name}}</a></li>
             </ul>
         </div>
 
@@ -22,63 +22,47 @@
                     <div class="slider-detail">
                         <div class="row">
                             <div class="col-md-3">
-                                <div class="slider-nav">
-                                    <!-- @foreach (var i in Model.tblProductImages)
-                                    {
-                                        <div>
-                                            <img src="~/Public/Admin/Pictures/product-images/@i.Name" alt="" class="w-75">
-                                        </div>
-                                    } -->
-                                </div>
+                                <ngx-slick-carousel class="carousel slider-nav" 
+                                    #slickModal="slick-carousel" 
+                                    [config]="slideNavConfig">
+                                    <div ngxSlickItem *ngFor="let img of listImg;">
+                                        <img src="{{'../assets/product-images/' + img.name}}" alt="" class="w-75" height="80px">
+                                    </div>
+                                </ngx-slick-carousel>
                             </div>
                             <div class="col-md-9">
-                                <div class="slider-for">
-                                    <!-- @foreach (var i in Model.tblProductImages)
-                                    {
-                                        <div>
-                                            <img src="~/Public/Admin/Pictures/product-images/@i.Name" alt="" class="w-100">
-                                        </div>
-                                    } -->
-                                </div>
+                                <ngx-slick-carousel class="carousel slider-for" 
+                                    #slickModal="slick-carousel" 
+                                    [config]="slideConfigProductImage">
+                                    
+
+                                    <div ngxSlickItem *ngFor="let img of listImg;" >
+                                        <img src="{{'../assets/product-images/' +img.name }}" alt="" class="w-100" height="380px">
+                                    </div>
+                                </ngx-slick-carousel>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5 col-sm-12">
                     <div class="detail-content">
-                        <h2>@Model.Name</h2>
+                        <h2 style="font-size: 20px;">{{name}}</h2>
                         <div class="rating d-flex">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
-                            <p>71 đánh giá</p>
+                            <p>{{star}} đánh giá</p>
                         </div>
                         <div class="d-flex justify-content-start">
-                            <p class="detail-price">100.000<small>VND</small><span>/100gr</span></p>
+                            <p class="detail-price">{{price | number }}<small>VND</small><span>/100gr</span></p>
                         </div>
                         <p class="safety-rating">
                             Sản phẩm đạt chuẩn vệ sinh an toàn thực phẩm
                         </p>
                         <div class="detail-description">
-                            <p>
-                                Trà Shan Tuyết (Chè Shan Tuyết) hay còn gọi là trà tuyết.
-                                Đây là loại trà đặc sản của các đồng bào tộc người Tày, Giao,
-                                Mông và là đặc sản của các tỉnh như Hà Giang, Điện Biên, Lào Cai.
-                            </p>
-                            <p>
-                                Đặc điểm của trà Shan Tuyetes là búp trà (casnhh trà) rất to và
-                                màu trắng, dưới cánh trà phủ 1 lớp lông tơ mịn màu trắng.
-                            </p>
-                            <p>
-                                Cây trà Shan Tuyết cổ thụ rất lớn, có khi vài người lớn vòng tay ôm.
-                                Mọc ở trên núi cao hơn 1200m, quanh năm mây mù và lạnh. Sự chênh lệch
-                                nhiệt độ giữa ngày và đêm là rất lớn, chính bởi có điều kiện tự nhiên
-                                thú vị như vậy nên đó là nét độc đáo tạo ra một hương vị trà shan
-                                tuyết cổ thụ thơm ngon.
-                            </p>
-                            <!-- @Html.Raw(Model.Description) -->
+                            <div style="font-size: 16px;" innerHTML="{{description}}"></div>
                         </div>
                     </div>
                 </div>
@@ -90,7 +74,7 @@
         <div class="instruction">
             <div class="row">
                 <div class="col-md-5 col-sm-6">
-                    <h2 class="h2-detail">Hướng dẫn pha <br /> @Model.Name</h2>
+                    <h2 class="h2-detail">Hướng dẫn pha <br /> {{name}}</h2>
                     <div class="instruction-item d-flex">
                         <i class="fa-solid fa-droplet fa-flip-horizontal"></i>
                         <p>
@@ -112,7 +96,7 @@
                     </div>
                 </div>
                 <div class="col-md-7 col-sm-6">
-                    <img src="~/Public/Assets/Pictures/chitietsanpham/phatra.jpg" alt="" class="w-100">
+                    <img src="../assets/Pictures/chitietsanpham/phatra.jpg" alt="" class="w-100">
                 </div>
             </div>
         </div>
@@ -122,30 +106,36 @@
         <div class="related-product">
             <h2 class="h2-detail">Sản phẩm liên quan</h2>
             <div class="related-slider">
-                <!-- @{Random rnd = new Random();}
-                @foreach (var p in ViewBag.listOther)
-                {
-                    int star = (rnd.Next(100));
-                    <div class="product-item">
+
+                <ngx-slick-carousel class="carousel" 
+                    #slickModal="slick-carousel" 
+                    [config]="slideConfig">
+                    
+
+                    <div ngxSlickItem class="product-item" *ngFor="let product of listOtherProduct;">
                         <div class="product-rate d-flex">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
-
-                            <p>(@star)</p>
+    
+                            <p>{{product.star}}</p>
                         </div>
                         <div class="new-product">
                             <p>NEW</p>
                         </div>
-                        <img src="~/Public/Admin/Pictures/products/@p.Image" alt="" class="w-100">
-                        <h5><a href="@Url.Action("ProductDetail", "Home", new {@p.Slug})">@p.Name</a></h5>
+                        <img src="{{'../assets/products/' + product.productImg}}" alt="" class="w-100" height="200px">
+                        <h5>
+                            <a href="/product-detail/{{product.slug}}">
+                                {{product.productName}}
+                            </a>
+                        </h5>
                         <div class="d-flex justify-content-center">
-                            <p class="product-price">@String.Format("{0:0,0}", p.Price)<small>VND</small><span>/100gr</span></p>
+                            <p class="product-price">{{product.productPrice | number }} <small>VND</small><span>/100gr</span></p>
                         </div>
                     </div>
-                } -->
+                </ngx-slick-carousel>
                 
             </div>
         </div>

@@ -10,8 +10,8 @@ export class NewsService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<any> {
-    return this.http.get<any>('https://localhost:7015/api/News');
+  getAll(pageNo: number, pageSize: number): Observable<any> {
+    return this.http.get<any>('https://localhost:7015/api/News/GetNewsList/pageNo/pageSize?pageNo=' + pageNo + '&pageSize='+ pageSize);
   }
 
 

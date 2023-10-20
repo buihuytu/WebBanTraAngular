@@ -29,14 +29,14 @@ export class TrashUserComponent {
     }, 1000);
   }
 
-  delUser(userId: number) {
+  delUser(userId: number): void {
     this.cs.deleteUser(userId).subscribe(res => {
       this.getListTrash();
       alert("Đã xóa thành viên thành công")
     })
   }
 
-  ReTrash(userId: number) {
+  ReTrash(userId: number): void {
     this.cs.ReTrashUser(userId).subscribe(res => {
       this.getListTrash();
       alert("Đã khôi phục thành viên thành công")

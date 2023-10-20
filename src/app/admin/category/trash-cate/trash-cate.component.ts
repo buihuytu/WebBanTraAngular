@@ -9,7 +9,7 @@ export class TrashCateComponent {
   listTrashCate:any;
   constructor(private cs : CategoryService) {}
   
-  getListTrash() {
+  getListTrash(): void {
     this.cs.getTrash().subscribe(res => {
       this.listTrashCate = res;
       setTimeout(()=>{   
@@ -29,14 +29,14 @@ export class TrashCateComponent {
     }, 1000);
     
   }
-  delCate(cateId: number) {
+  delCate(cateId: number): void {
     this.cs.deleteCate(cateId).subscribe(res => {
       this.getListTrash();
       alert("Đã xóa danh mục thành công")
     })
   }
 
-  ReTrashCategory(cateId: number) {
+  ReTrashCategory(cateId: number): void {
     this.cs.ReTrashCate(cateId).subscribe(res => {
       this.getListTrash();
       alert("Đã khôi phục danh mục thành công")

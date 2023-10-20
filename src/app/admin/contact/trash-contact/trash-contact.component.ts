@@ -28,14 +28,14 @@ export class TrashContactComponent {
     }, 1000);
   }
 
-  reTrash(contactId: number) {
+  reTrash(contactId: number): void {
     this.cs.reTrashContact(contactId).subscribe(res => {
       this.getListTrash();
       alert("Đã khôi phục liên hệ thành công")
     })
   }
 
-  delContact(cateId: number) {
+  delContact(cateId: number): void {
     this.cs.deleteContact(cateId).subscribe(res => {
       this.getListTrash();
       alert("Đã xóa liên hệ thành công")

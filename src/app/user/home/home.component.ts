@@ -8,27 +8,24 @@ import { HomeService } from './home.service';
 })
 export class HomeComponent implements OnInit{
   slidesSlider: any[] = [];
-  slidesHotProducts = [
-    { img: '../assets/Pictures/trang-chu/product-1.png' },
-    { img: '../assets/Pictures/trang-chu/product-2.png' },
-    { img: '../assets/Pictures/trang-chu/product-3.png' },
-    { img: '../assets/Pictures/trang-chu/product-4.png' },
-    { img: '../assets/Pictures/trang-chu/product-4.png' },
-  ];
+  slidesHotProducts: any[] = [];
 
-  slideConfig = { slidesToShow: 4, slidesToScroll: 4 };
-  slickInit(e: any) {
-    console.log('slick initialized');
-  }
-  breakpoint(e: any) {
-    console.log('breakpoint');
-  }
-  afterChange(e: any) {
-    console.log('afterChange');
-  }
-  beforeChange(e: any) {
-    console.log('beforeChange');
-  }
+  slideConfig = { 
+    slidesToShow: 4, 
+    slidesToScroll: 4,
+    nextArrow: '<img class="btnNext-prod" style="position: absolute;top: 40%;right: -5%;cursor: pointer;" src="../../../assets/Pictures/trang-chu/nextButton.png" >',
+    prevArrow: '<img class="btnPrev-prod" style="position: absolute;top: 40%;left: -5%;cursor: pointer;" src="../../../assets/Pictures/trang-chu/backButton.png" >' 
+  };
+  slideConfigSlider = { 
+    slidesToShow: 1, 
+    slidesToScroll: 1, 
+    dots: true,
+    infinite: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
+  
 
   constructor(private ps: HomeService){}
 
@@ -38,7 +35,14 @@ export class HomeComponent implements OnInit{
     });
   }
 
+  getHotProduct(){
+    this.ps.getHotProduct().subscribe(res => {
+      this.slidesHotProducts =  res.list;
+    })
+  }
+
   ngOnInit(){
     this.getAll();
+    this.getHotProduct();
   }
 }
