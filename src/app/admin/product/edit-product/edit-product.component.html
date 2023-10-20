@@ -26,7 +26,7 @@
     <main>
         <div class="card">
             <div class="card-header d-flex justify-content-between">
-                <h5 class="h5-title" style="margin: 8px 20px;">Cập nhật người dùng</h5>
+                <h5 class="h5-title" style="margin: 8px 20px;">Cập nhật sản phẩm</h5>
                 <div class="button" style="margin: 8px 20px;">
                     <button type="submit" class="btn btn-primary btn-sm mr-2" style="padding: 4px 8px;" (click)="onSubmit()">
                         <svg xmlns="http://www.w3.org/2000/svg" style="fill: #fff" height="1em" viewBox="0 0 448 512">
@@ -72,13 +72,13 @@
                                     <small *ngIf="f.Price.errors['required']" style="color: red;">Vui lòng nhập gia</small>
                                 </div>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3" >
                                 <label for="" class="mb-2 font-weight-bold">Mo ta</label>
-                                <input name="" class="form-control" type="text" formControlName="Description"/>
+                                <angular-editor formControlName="Description" [config]="config"></angular-editor>
                             </div>
                             <div class="mb-3">
                                 <label for="" class="mb-2 font-weight-bold">Chi tiet</label>
-                                <input name="" class="form-control" type="text" formControlName="Detail"/>
+                                <angular-editor formControlName="Detail" [config]="config"></angular-editor>
                             </div>
                         </div>
                         <div class="col-md-3">

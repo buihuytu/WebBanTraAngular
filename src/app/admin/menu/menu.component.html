@@ -119,13 +119,19 @@
         <span class="caret">Bài viết</span>
         <ul class="nested">
           <li>
-            <a routerLink="../Posts/index.html"><span>Danh sách</span></a>
+            <a [routerLink]="['/admin/new/index']"
+              ><span>Danh sách</span></a
+            >
           </li>
           <li>
-            <a routerLink="../Posts/Create.html"><span>Thêm mới</span></a>
+            <a [routerLink]="['/admin/new/add']"
+              ><span>Thêm mới</span></a
+            >
           </li>
           <li>
-            <a routerLink="../Posts/Trash.html"><span>Thùng rác</span></a>
+            <a [routerLink]="['/admin/new/trash']"
+              ><span>Thùng rác</span></a
+            >
           </li>
         </ul>
       </li>

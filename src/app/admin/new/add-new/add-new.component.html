@@ -26,7 +26,7 @@
     <main>
         <div class="card">
             <div class="card-header d-flex justify-content-between">
-                <h5 class="h5-title" style="margin: 8px 20px;">Thêm sản phẩm</h5>
+                <h5 class="h5-title" style="margin: 8px 20px;">Thêm bài viết</h5>
                 <div class="button" style="margin: 8px 20px;">
                     <button type="submit" class="btn btn-primary btn-sm mr-2" style="padding: 4px 8px;" (click)="onSubmit()">
                         <svg xmlns="http://www.w3.org/2000/svg" style="fill: #fff" height="1em" viewBox="0 0 448 512">
@@ -35,7 +35,7 @@
                         </svg>
                         Lưu
                     </button>
-                    <a [routerLink]="['/admin/product/index']" class="btn btn-danger btn-sm" style="padding: 4px 8px;">
+                    <a [routerLink]="['/admin/new/index']" class="btn btn-danger btn-sm" style="padding: 4px 8px;">
                         <svg xmlns="http://www.w3.org/2000/svg" style="fill: #fff;" height="1em" viewBox="0 0 512 512">
                             <path
                                 d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
@@ -45,55 +45,37 @@
                 </div>
             </div>
             <div class="card-body"> 
-                <form action="" method="" class="w-100" [formGroup]="addProduct">
+                <form action="" method="" class="w-100" [formGroup]="addNew">
                     <div class="row">
                         <div class="col-md-8 mr-4">
                             <div class="mb-3">
-                                <label for="" class="mb-2 font-weight-bold">Ten san pham</label>
+                                <label for="" class="mb-2 font-weight-bold">Tên bài viết</label>
                                 <input name="" class="form-control" type="text" formControlName="Name"/>
                                 <div *ngIf="submited && f.Name.errors">
-                                    <small *ngIf="f.Name.errors['required']" style="color: red;">Vui lòng nhập ten san pham</small>
+                                    <small *ngIf="f.Name.errors['required']" style="color: red;">Vui lòng nhập tên bài viết</small>
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="" class="mb-2 font-weight-bold">So luong</label>
-                                <input name="" class="form-control" type="text" formControlName="Mass"/>
-                                <div *ngIf="submited && f.Mass.errors">
-                                    <small *ngIf="f.Mass.errors['required']" style="color: red;">Vui lòng nhập so luong</small>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="" class="mb-2 font-weight-bold">Gia</label>
-                                <input name="" class="form-control" type="text" formControlName="Price"/>
-                                <div *ngIf="submited && f.Price.errors">
-                                    <small *ngIf="f.Price.errors['required']" style="color: red;">Vui lòng nhập gia</small>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="" class="mb-2 font-weight-bold">Mo ta</label>
-                                <angular-editor formControlName="Description" [config]="config"></angular-editor>
-                            </div>
-                            <div class="mb-3">
-                                <label for="" class="mb-2 font-weight-bold">Chi tiet</label>
+                                <label for="" class="mb-2 font-weight-bold">Chi tiết</label>
                                 <angular-editor formControlName="Detail" [config]="config"></angular-editor>
+                                <div *ngIf="submited && f.Detail.errors">
+                                    <small *ngIf="f.Detail.errors['required']" style="color: red;">Vui lòng nhập chi tiết bài viết</small>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="mb-2 font-weight-bold">Tóm tắt</label>
+                                <textarea class="form-control" formControlName="Summary"></textarea>
+                                <div *ngIf="submited && f.Summary.errors">
+                                    <small *ngIf="f.Summary.errors['required']" style="color: red;">Vui lòng nhập tóm tắt bài viết</small>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="mb-3">
-                                <label class="mb-2 font-weight-bold" for="">Ảnh san pham</label>
+                                <label class="mb-2 font-weight-bold" for="">Ảnh bài viết</label>
                                 <div class="">
                                     <input class="control-label" id="" name="" type="file" (change)="onChange($event)" accept="image/*">
                                     <span class="field-validation-valid text-danger" data-valmsg-for="Image" data-valmsg-replace="true"></span>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="" class="mb-2 font-weight-bold">Danh muc</label>
-                                <select name="" class="form-control" formControlName="CateId">
-                                    <option value="">Chon danh muc</option>
-                                    <option *ngFor="let category of listCategory" value="{{ category.id }}">{{ category.name }}</option>
-                                </select>
-                                <div *ngIf="submited && f.CateId.errors">
-                                    <small *ngIf="f.CateId.errors['required']" style="color: red;">Vui lòng chon danh muc</small>
                                 </div>
                             </div>
                             <div class="mb-3">

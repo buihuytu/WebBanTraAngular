@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ProductService } from '../product.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CategoryService } from '../../category/category.service';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
   selector: 'app-edit-product',
@@ -21,6 +23,17 @@ export class EditProductComponent {
   FileImage!: File;
   listCategory: any;
 
+  config: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '15rem',
+    minHeight: '5rem',
+    translate: 'no',
+    defaultParagraphSeparator: 'p',
+    defaultFontName: 'Times New Roman',
+   
+  };
+
   editProduct = this.fb.group({
     Id: [''],
     Name: ['', Validators.required],
@@ -37,11 +50,16 @@ export class EditProductComponent {
     private us: ProductService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
+    private cs: CategoryService,
   ) { }
 
   get f() {return this.editProduct.controls;}
 
   ngOnInit(): void {
+    this.cs.getList().subscribe(res => {
+      this.listCategory = res.list;
+    });
+
     this.activatedRoute.paramMap.subscribe(query => {
       console.log(query.get("productId"));   // lay id
       let id = query.get("productId");
@@ -53,7 +71,7 @@ export class EditProductComponent {
               CateId: [res.cateId, Validators.required],
               Mass: [res.mass, Validators.required],
               Price: [res.price, Validators.required],
-              Description: [res.Description],
+              Description: [res.description],
               Detail: [res.detail],
               IsActive: [res.isActive, Validators.required],
           });
@@ -81,8 +99,8 @@ export class EditProductComponent {
       
       console.log(this.FileImage)
       var formEdit = new FormData();
-      formEdit.append("ProductName", this.Name);
-      formEdit.append("CategoryId", this.CateId.toString());
+      formEdit.append("Name", this.Name);
+      formEdit.append("CateId", this.CateId.toString());
       formEdit.append("Mass", this.Mass.toString());
       formEdit.append("Price", this.Price.toString());
       formEdit.append("Description", this.Description);

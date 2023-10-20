@@ -46,6 +46,11 @@ import { AdminModule } from './admin/admin.module';
 import { ListImageComponent } from './admin/product-image/list-image/list-image.component';
 import { AddImageComponent } from './admin/product-image/add-image/add-image.component';
 import { TrashImageComponent } from './admin/product-image/trash-image/trash-image.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularEditorComponent, AngularEditorModule } from '@kolkov/angular-editor';
+import { ListNewComponent } from './admin/new/list-new/list-new.component';
+import { TrashNewComponent } from './admin/new/trash-new/trash-new.component';
+import { AddNewComponent } from './admin/new/add-new/add-new.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,7 +89,9 @@ import { TrashImageComponent } from './admin/product-image/trash-image/trash-ima
     ReplyContactComponent,
     AddImageComponent,
     TrashImageComponent,
-
+    ListNewComponent,
+    TrashNewComponent,
+    AddNewComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,6 +104,8 @@ import { TrashImageComponent } from './admin/product-image/trash-image/trash-ima
     DataTablesModule,
     CommonModule,
     MatSliderModule,
+    BrowserAnimationsModule,
+    AngularEditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

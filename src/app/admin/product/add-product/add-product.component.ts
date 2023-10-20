@@ -3,6 +3,7 @@ import { ProductService } from '../product.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from '../../category/category.service';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -19,6 +20,17 @@ export class AddProductComponent {
   IsActive!: number;
   FileImage!: File;
   listCategory: any;
+  
+  config: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '15rem',
+    minHeight: '5rem',
+    translate: 'no',
+    defaultParagraphSeparator: 'p',
+    defaultFontName: 'Times New Roman',
+   
+  };
 
   addProduct = this.fb.group({
     Name: ['', Validators.required],
@@ -64,8 +76,8 @@ export class AddProductComponent {
       
       console.log(this.FileImage)
       var formAdd = new FormData();
-      formAdd.append("ProductName", this.Name);
-      formAdd.append("CategoryId", this.CateId.toString());
+      formAdd.append("Name", this.Name);
+      formAdd.append("CateId", this.CateId.toString());
       formAdd.append("Mass", this.Mass.toString());
       formAdd.append("Price", this.Price.toString());
       formAdd.append("Description", this.Description);

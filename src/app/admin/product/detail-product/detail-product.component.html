@@ -26,7 +26,7 @@
     <main>
         <div class="card" *ngIf="detailProduct">
             <div class="card-header d-flex justify-content-between">
-                <h5 class="h5-title" style="margin: 8px 20px;">Chi tiết san pham</h5>
+                <h5 class="h5-title" style="margin: 8px 20px;">Chi tiết sản phẩm</h5>
                 <div class="button" style="margin: 8px 20px;">
                     <a [routerLink]="['/admin/product/edit', detailProduct.id]" class="btn btn-primary btn-sm mr-2" style="padding: 4px 8px;">
                         <svg xmlns="http://www.w3.org/2000/svg" style="fill: #fff;" height="1em" viewBox="0 0 512 512">
@@ -81,7 +81,7 @@
                         </tr>
                         <tr>
                             <th>Image</th>
-                            <td><img src="../../../../assets/admin-img/product/{{detailProduct.image}}" alt="Không có ảnh" style="width: 80px; height: 80px;"></td>
+                            <td><img src="../../../../assets/products/{{detailProduct.image}}" alt="Không có ảnh" style="width: 80px; height: 80px;"></td>
                         </tr>
                         <tr>
                             <th>CreatedAt</th>

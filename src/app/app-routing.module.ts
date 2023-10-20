@@ -29,6 +29,9 @@ import { AddUserComponent } from './admin/users/add-user/add-user.component';
 import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
 import { AdminComponent } from './admin/admin.component';
 import { WebsiteComponent } from './user/website.component';
+import { AddNewComponent } from './admin/new/add-new/add-new.component';
+import { ListNewComponent } from './admin/new/list-new/list-new.component';
+import { TrashNewComponent } from './admin/new/trash-new/trash-new.component';
 
 
 
@@ -70,7 +73,10 @@ const routes: Routes = [
       {path:'user/detail/:userId', component: DetailUserComponent },
       {path:'contact/index', component: ListContactComponent },
       {path:'contact/trash', component: TrashContactComponent },
-      {path:'contact/reply/:contactId', component: ReplyContactComponent },
+      { path: 'contact/reply/:contactId', component: ReplyContactComponent },
+      {path:'new/index', component: ListNewComponent },
+      {path:'new/trash', component: TrashNewComponent },
+      {path:'new/add', component: AddNewComponent },
     ]
   },
   { path: '**', redirectTo: '' }
